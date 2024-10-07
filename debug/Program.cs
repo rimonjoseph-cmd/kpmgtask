@@ -31,7 +31,7 @@ namespace debug
         static void Main(string[] args)
         {
             IOrganizationService service  = getorgservice();
-             new BookRoom(service).getrooms1();
+             new BookRoom(service).getAvailablerooms();
         }
     }
 }
