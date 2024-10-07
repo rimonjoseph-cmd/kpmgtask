@@ -20,9 +20,10 @@ namespace Kpmg.CRM.BookRooms
         public BookRoomClass(IOrganizationService service) {
             _organizationService = service;
         }
-        public void validateifBookedExistBefore(DateTime bookingDate, EntityReference roomId, EntityReference timeSlot)
+        public void validateifBookedExistBefore(IOrganizationService organizationService,DateTime bookingDate, EntityReference roomId, EntityReference timeSlot)
         {
-           
+           // throw new InvalidPluginExecutionException(roomId.Id.ToString() + "  "+ bookingDate +"  "+ timeSlot.Id);
+
             // Check for existing bookings
             QueryExpression queryBookAlreadyExist = new QueryExpression(bookroomSchemaName)
             {
@@ -31,16 +32,16 @@ namespace Kpmg.CRM.BookRooms
                 {
                     Conditions =
                     {
-                        new ConditionExpression("kpmg_room", ConditionOperator.Equal, roomId),
+                        new ConditionExpression("kpmg_room", ConditionOperator.Equal, roomId.Id),
                         new ConditionExpression("kpmg_bookingday", ConditionOperator.Equal, bookingDate),
-                        new ConditionExpression("kpmg_predefinedtimeslots", ConditionOperator.Equal, timeSlot)
+                        new ConditionExpression("kpmg_predefinedtimeslots", ConditionOperator.Equal, timeSlot.Id)
                     }
                 }
             };
 
-            var existingBookings = _organizationService.RetrieveMultiple(queryBookAlreadyExist);
+            var existingBookings = organizationService.RetrieveMultiple(queryBookAlreadyExist);
 
-            if (existingBookings.Entities.Count > 0)
+            if (existingBookings?.Entities.Count > 0)
             {
                 throw new InvalidPluginExecutionException("A booking already exists for this room at the specified date and time.");
             }

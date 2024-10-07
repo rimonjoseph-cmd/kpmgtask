@@ -1,4 +1,4 @@
-﻿using Kpmg.CRM.BookRoom.BookRoom;
+﻿using Kpmg.CRM.BookRooms;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Tooling.Connector;
 using System;
@@ -31,7 +31,15 @@ namespace debug
         static void Main(string[] args)
         {
             IOrganizationService service  = getorgservice();
-             new BookRoom(service).getAvailablerooms();
+          //   new BookRoomClass(service).getAvailablerooms();
+            // Create EntityReference for room and timeslot
+            var roomId = new EntityReference("kpmg_room", new Guid("3c8b2b98-6a83-ef11-ac21-6045bd696533")); // Replace "room" with the actual logical name of the room entity
+            var timeSlot = new EntityReference("kpmg_predefinedtimeslots", new Guid("5c61922e-bc84-ef11-ac21-6045bd696533")); // Replace "timeslot" with the actual logical name of the timeslot entity
+
+            // Create DateTime for the booking date
+            var bookingDate = DateTime.Parse("2024-10-07T00:00:00"); // Use ISO 8601 format for clarity
+
+            new BookRoomClass(service).validateifBookedExistBefore(bookingDate, roomId, timeSlot);
         }
     }
 }

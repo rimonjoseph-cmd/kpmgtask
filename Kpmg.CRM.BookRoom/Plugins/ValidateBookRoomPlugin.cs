@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using Kpmg.CRM.BookRooms;
+using Microsoft.Xrm.Sdk.Query;
 namespace Kpmg.CRM.BookRoom.Plugins
 {
     public class ValidateBookRoomPlugin : IPlugin
@@ -13,36 +14,37 @@ namespace Kpmg.CRM.BookRoom.Plugins
         public void Execute(IServiceProvider serviceProvider)
         {
             // Obtain the tracing service
-            ITracingService tracingService =
-            (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+            ITracingService tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
 
-            // Obtain the execution context from the service provider.  
-            IPluginExecutionContext context = (IPluginExecutionContext)
-                serviceProvider.GetService(typeof(IPluginExecutionContext));
+            // Obtain the execution context
+            IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
 
-            // The InputParameters collection contains all the data passed in the message request.  
+            // Obtain the organization service
+            IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+            IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
+
+            // The InputParameters collection contains all the data passed in the message request.   
             if (context.InputParameters.Contains("Target") &&
                 context.InputParameters["Target"] is Entity)
             {
                 // Obtain the target entity from the input parameters.  
-                Entity entity = (Entity)context.InputParameters["Target"];
-
-                // Obtain the IOrganizationService instance which you will need for  
-                // web service calls.  
-                IOrganizationServiceFactory serviceFactory =
-                    (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
-                IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
+                Entity entityBookRoom = (Entity)context.InputParameters["Target"];
 
                 try
                 {
-                    // Plug-in business logic goes here.
-                    new BookRoomClass(service).validateifBookedExistBefore()
-                    
+                    var roomId = entityBookRoom.GetAttributeValue<EntityReference>("kpmg_room"); 
+                    var bookingDate = entityBookRoom.GetAttributeValue<DateTime>("kpmg_bookingday"); 
+                    var timeSlot = entityBookRoom.GetAttributeValue<EntityReference>("kpmg_predefinedtimeslots");
+                    if(service == null)
+                    {
+                        throw new InvalidPluginExecutionException("service is null");
+                    }
+                    new BookRoomClass(service).validateifBookedExistBefore(service,bookingDate,roomId,timeSlot);
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
                 {
-                    throw new InvalidPluginExecutionException("An error occurred in FollowUpPlugin.", ex);
+                    throw new InvalidPluginExecutionException("An error occurred in book room.", ex);
                 }
 
                 catch (Exception ex)
