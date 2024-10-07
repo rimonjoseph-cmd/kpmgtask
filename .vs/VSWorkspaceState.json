@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Kpmg.CRM.BookRoom",
+    "\\Kpmg.CRM.BookRoom\\Plugins"
   ],
-  "SelectedNode": "\\Kpmg.CRM.BookRoom.sln",
+  "SelectedNode": "\\Kpmg.CRM.BookRoom\\Plugins\\ValidateBookRoomPlugin.cs",
   "PreviewInSolutionExplorer": false
 }

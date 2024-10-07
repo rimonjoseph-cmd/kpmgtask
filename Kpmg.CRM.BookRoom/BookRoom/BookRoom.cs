@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kpmg.CRM.BookRoom.BookRoom
+namespace Kpmg.CRM.BookRooms
 {
-    public class BookRoom
+    public class BookRoomClass
     {
         private IOrganizationService _organizationService;
         const string bookroomSchemaName = "kpmg_bookroom";
@@ -17,7 +17,7 @@ namespace Kpmg.CRM.BookRoom.BookRoom
         const string buildingSchemaName = "kpmg_building";
         const string predefinedtimeslotsSchemaName = "kpmg_predefinedtimeslots";
 
-        public BookRoom(IOrganizationService service) {
+        public BookRoomClass(IOrganizationService service) {
             _organizationService = service;
         }
         public void validateifBookedExistBefore(DateTime bookingDate, EntityReference roomId, EntityReference timeSlot)

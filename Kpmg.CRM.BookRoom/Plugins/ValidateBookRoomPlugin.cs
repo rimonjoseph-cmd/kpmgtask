@@ -5,7 +5,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-
+using Kpmg.CRM.BookRooms;
 namespace Kpmg.CRM.BookRoom.Plugins
 {
     public class ValidateBookRoomPlugin : IPlugin
@@ -36,6 +36,7 @@ namespace Kpmg.CRM.BookRoom.Plugins
                 try
                 {
                     // Plug-in business logic goes here.
+                    new BookRoomClass(service).validateifBookedExistBefore()
                     
                 }
 
