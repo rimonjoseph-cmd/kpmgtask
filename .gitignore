@@ -1,0 +1,50 @@
+# .NET
+*.obj
+*.bin
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+*.cache
+*.log
+*/bin
+*/obj
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio files
+.vs/
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+*.idb
+*.ipch
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates

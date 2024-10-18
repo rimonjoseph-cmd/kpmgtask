@@ -39,7 +39,7 @@ namespace debug
             // Create DateTime for the booking date
             var bookingDate = DateTime.Parse("2024-10-07T00:00:00"); // Use ISO 8601 format for clarity
 
-            new BookRoomClass(service).validateifBookedExistBefore(bookingDate, roomId, timeSlot);
+            //new BookRoomClass(service).validateifBookedExistBefore(bookingDate, roomId, timeSlot);
         }
     }
 }
