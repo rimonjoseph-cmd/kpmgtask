@@ -3,6 +3,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Tooling.Connector;
 using KPMG.CRM.Business.Room.BLL;
+using KPMG.CRM.Business.TimeSlot.BLL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +14,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+#region dependency injection
 builder.Services.AddSingleton<IOrganizationServiceAsync>(serviceProvider =>
 {
     return CreateOrganizationService();
 });
 builder.Services.AddScoped<IBuildingBLL,BuildingBLL>();
 builder.Services.AddScoped<IRoomBLL,RoomBLL>();
+builder.Services.AddScoped<ITimeSlotBLL, TimeSlotBLL>();
+#endregion 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

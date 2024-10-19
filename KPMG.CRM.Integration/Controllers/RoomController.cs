@@ -21,7 +21,12 @@ namespace KPMG.CRM.Integration.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-
+        // GET: api/<RoomController>
+        //[HttpGet]
+        //public IEnumerable<string> GetAvailable()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
         // GET api/<RoomController>/5
         [HttpGet("{id}")]
         public string Get(int id)
