@@ -102,6 +102,7 @@ namespace KPMG.CRM.DAL
 			public const string User_KPMg_BookRoom = "user_kpmg_bookroom";
 			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
+			public const string kpmgbookzone = "kpmg_bookedzonedependent";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]

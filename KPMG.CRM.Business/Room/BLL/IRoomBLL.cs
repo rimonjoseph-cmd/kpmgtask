@@ -1,14 +1,11 @@
-﻿using KPMG.CRM.Business.Room.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using KPMG.CRM.Business.Room.DTO;
 
 namespace KPMG.CRM.Business.Room.BLL
 {
     public  interface IRoomBLL
     {
         Task<Guid> createRoom(CreateRoomInputDTO createRoomInput);
+        Task<List<RoomModel>> getAvailable(DateTime dateInput);
     }
 }
