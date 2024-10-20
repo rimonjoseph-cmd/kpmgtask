@@ -8,10 +8,11 @@ namespace KPMG.CRM.Business.Models
 {
     public class BuildingModel
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
+        public string Id { get; set; }
+        public string name { get; set; }
         public string code { get; set; }
-        public bool isActive { get; set; } // is blocked or not
+        public bool isactive { get; set; } // is blocked or not
+        public bool isblocked { get; set; }
 
     }
 }

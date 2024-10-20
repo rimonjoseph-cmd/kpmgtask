@@ -67,10 +67,10 @@ namespace KPMG.CRM.Business.Room.BLL
                         isActive = true,
                         building = new Models.BuildingModel()
                         {
-                            Id = roomEntity.GetAttributeValue<Guid>(KPMg_Room.Fields.Id),
+                            Id = roomEntity.GetAttributeValue<Guid>(KPMg_Room.Fields.Id).ToString(),
                             code = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_BuildingCode)?.Value as string,
-                            Name = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value as string,
-                            isActive = true
+                            name = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value as string,
+                            isactive = true
                         }
                     });
                 }

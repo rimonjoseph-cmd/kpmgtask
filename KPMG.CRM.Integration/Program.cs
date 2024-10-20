@@ -1,7 +1,6 @@
 using KPMG.CRM.Business.Building;
 using Microsoft.Xrm.Sdk;
 using Microsoft.PowerPlatform.Dataverse.Client;
-using Microsoft.Xrm.Tooling.Connector;
 using KPMG.CRM.Business.Room.BLL;
 using KPMG.CRM.Business.TimeSlot.BLL;
 
@@ -12,8 +11,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+var MyAllowSpecificOrigins = "AllowAll";
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                      });
+});
 #region dependency injection
 builder.Services.AddSingleton<IOrganizationServiceAsync>(serviceProvider =>
 {
@@ -39,7 +48,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseCors(MyAllowSpecificOrigins);
 app.Run();
 IOrganizationServiceAsync CreateOrganizationService()
 {
