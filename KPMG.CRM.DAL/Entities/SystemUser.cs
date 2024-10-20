@@ -20,27 +20,27 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Administrative", 1, null, null, null, 1033, "Administrative")]
+		[OptionSetMetadataAttribute("Administrative", 1)]
 		Administrative = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Delegated Admin", 5, null, null, null, 1033, "Delegated Admin")]
+		[OptionSetMetadataAttribute("Delegated Admin", 5)]
 		DelegatedAdmin = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Non-interactive", 4, null, null, null, 1033, "Non-interactive")]
+		[OptionSetMetadataAttribute("Non-interactive", 4)]
 		NonInteractive = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Read", 2, null, null, null, 1033, "Read")]
+		[OptionSetMetadataAttribute("Read", 2)]
 		Read = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Read-Write", 0, null, null, null, 1033, "Read-Write")]
+		[OptionSetMetadataAttribute("Read-Write", 0)]
 		ReadWrite = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Support User", 3, null, null, null, 1033, "Support User")]
+		[OptionSetMetadataAttribute("Support User", 3)]
 		SupportUser = 3,
 	}
 	
@@ -52,7 +52,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -64,7 +64,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -76,7 +76,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -88,7 +88,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -100,15 +100,15 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Exists", 0, null, null, null, 1033, "Exists")]
+		[OptionSetMetadataAttribute("Exists", 0)]
 		Exists = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Not found or hard deleted", 2, null, null, null, 1033, "Not found or hard deleted")]
+		[OptionSetMetadataAttribute("Not found or hard deleted", 2)]
 		NotFoundOrHardDeleted = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Soft deleted", 1, null, null, null, 1033, "Soft deleted")]
+		[OptionSetMetadataAttribute("Soft deleted", 1)]
 		SoftDeleted = 1,
 	}
 	
@@ -120,55 +120,55 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Administrative", 1, null, null, null, 1033, "Administrative")]
+		[OptionSetMetadataAttribute("Administrative", 1)]
 		Administrative = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Basic", 2, null, null, null, 1033, "Basic")]
+		[OptionSetMetadataAttribute("Basic", 2)]
 		Basic = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Device Basic", 4, null, null, null, 1033, "Device Basic")]
+		[OptionSetMetadataAttribute("Device Basic", 4)]
 		DeviceBasic = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Device Enterprise", 8, null, null, null, 1033, "Device Enterprise")]
+		[OptionSetMetadataAttribute("Device Enterprise", 8)]
 		DeviceEnterprise = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Device Essential", 6, null, null, null, 1033, "Device Essential")]
+		[OptionSetMetadataAttribute("Device Essential", 6)]
 		DeviceEssential = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Device Professional", 3, null, null, null, 1033, "Device Professional")]
+		[OptionSetMetadataAttribute("Device Professional", 3)]
 		DeviceProfessional = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Enterprise", 7, null, null, null, 1033, "Enterprise")]
+		[OptionSetMetadataAttribute("Enterprise", 7)]
 		Enterprise = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Essential", 5, null, null, null, 1033, "Essential")]
+		[OptionSetMetadataAttribute("Essential", 5)]
 		Essential = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Field Service", 11, null, null, null, 1033, "Field Service")]
+		[OptionSetMetadataAttribute("Field Service", 11)]
 		FieldService = 11,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Professional", 0, null, null, null, 1033, "Professional")]
+		[OptionSetMetadataAttribute("Professional", 0)]
 		Professional = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Project Service", 12, null, null, null, 1033, "Project Service")]
+		[OptionSetMetadataAttribute("Project Service", 12)]
 		ProjectService = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Sales", 9, null, null, null, 1033, "Sales")]
+		[OptionSetMetadataAttribute("Sales", 9)]
 		Sales = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Service", 10, null, null, null, 1033, "Service")]
+		[OptionSetMetadataAttribute("Service", 10)]
 		Service = 10,
 	}
 	
@@ -180,11 +180,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Not deleted", 0, null, null, null, 1033, "Not deleted")]
+		[OptionSetMetadataAttribute("Not deleted", 0)]
 		NotDeleted = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Soft deleted", 1, null, null, null, 1033, "Soft deleted")]
+		[OptionSetMetadataAttribute("Soft deleted", 1)]
 		SoftDeleted = 1,
 	}
 	
@@ -196,19 +196,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Approved", 1, null, null, null, 1033, "Approved")]
+		[OptionSetMetadataAttribute("Approved", 1)]
 		Approved = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Empty", 0, null, null, null, 1033, "Empty")]
+		[OptionSetMetadataAttribute("Empty", 0)]
 		Empty = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Pending Approval", 2, null, null, null, 1033, "Pending Approval")]
+		[OptionSetMetadataAttribute("Pending Approval", 2)]
 		PendingApproval = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Rejected", 3, null, null, null, 1033, "Rejected")]
+		[OptionSetMetadataAttribute("Rejected", 3)]
 		Rejected = 3,
 	}
 	
@@ -220,19 +220,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Forward Mailbox", 3, null, null, null, 1033, "Forward Mailbox")]
+		[OptionSetMetadataAttribute("Forward Mailbox", 3)]
 		ForwardMailbox = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Microsoft Dynamics 365 for Outlook", 1, null, null, null, 1033, "Microsoft Dynamics 365 for Outlook")]
+		[OptionSetMetadataAttribute("Microsoft Dynamics 365 for Outlook", 1)]
 		MicrosoftDynamics365ForOutlook = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("None", 0, null, null, null, 1033, "None")]
+		[OptionSetMetadataAttribute("None", 0)]
 		None = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Server-Side Synchronization or Email Router", 2, null, null, null, 1033, "Server-Side Synchronization or Email Router")]
+		[OptionSetMetadataAttribute("Server-Side Synchronization or Email Router", 2)]
 		ServerSideSynchronizationOrEmailRouter = 2,
 	}
 	
@@ -244,31 +244,31 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invitation Accepted", 4, null, null, null, 1033, "Invitation Accepted")]
+		[OptionSetMetadataAttribute("Invitation Accepted", 4)]
 		InvitationAccepted = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invitation Expired", 3, null, null, null, 1033, "Invitation Expired")]
+		[OptionSetMetadataAttribute("Invitation Expired", 3)]
 		InvitationExpired = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invitation Near Expired", 2, null, null, null, 1033, "Invitation Near Expired")]
+		[OptionSetMetadataAttribute("Invitation Near Expired", 2)]
 		InvitationNearExpired = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invitation Not Sent", 0, null, null, null, 1033, "Invitation Not Sent")]
+		[OptionSetMetadataAttribute("Invitation Not Sent", 0)]
 		InvitationNotSent = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invitation Rejected", 5, null, null, null, 1033, "Invitation Rejected")]
+		[OptionSetMetadataAttribute("Invitation Rejected", 5)]
 		InvitationRejected = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invitation Revoked", 6, null, null, null, 1033, "Invitation Revoked")]
+		[OptionSetMetadataAttribute("Invitation Revoked", 6)]
 		InvitationRevoked = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invited", 1, null, null, null, 1033, "Invited")]
+		[OptionSetMetadataAttribute("Invited", 1)]
 		Invited = 1,
 	}
 	
@@ -277,11 +277,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Application user", 0, "#0000ff", null, "", 1033, "Application user")]
+		[OptionSetMetadataAttribute("Application user", 0, "#0000ff")]
 		ApplicationUser = 192350000,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Bot application user", 1, "#0000ff", null, "", 1033, "Bot application user")]
+		[OptionSetMetadataAttribute("Bot application user", 1, "#0000ff")]
 		BotApplicationUser = 192350001,
 	}
 	
@@ -296,21 +296,21 @@ namespace KPMG.CRM.DAL
 		/// Indicates that the user is not a bot
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("None", 2, "#0000ff", "Indicates that the user is not a bot", "", 1033, "None")]
+		[OptionSetMetadataAttribute("None", 2, "#0000ff", "Indicates that the user is not a bot")]
 		None = 192350002,
 		
 		/// <summary>
 		/// Other type of bot
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Other", 1, "#0000ff", "Other type of bot", "", 1033, "Other")]
+		[OptionSetMetadataAttribute("Other", 1, "#0000ff", "Other type of bot")]
 		Other = 192350001,
 		
 		/// <summary>
 		/// CCI first party Bot
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Virtual Agent", 0, "#0000ff", "CCI first party Bot", "", 1033, "Virtual Agent")]
+		[OptionSetMetadataAttribute("Virtual Agent", 0, "#0000ff", "CCI first party Bot")]
 		VirtualAgent = 192350000,
 	}
 	
@@ -319,11 +319,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("BOT User", 1, "#0000ff", null, "", 1033, "BOT User")]
+		[OptionSetMetadataAttribute("BOT User", 1, "#0000ff")]
 		BotUser = 192350001,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("CRM User", 0, "#0000ff", null, "", 1033, "CRM User")]
+		[OptionSetMetadataAttribute("CRM User", 0, "#0000ff")]
 		CrmUser = 192350000,
 	}
 	
@@ -335,15 +335,15 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Microsoft Dynamics 365 for Outlook", 1, null, null, null, 1033, "Microsoft Dynamics 365 for Outlook")]
+		[OptionSetMetadataAttribute("Microsoft Dynamics 365 for Outlook", 1)]
 		MicrosoftDynamics365ForOutlook = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("None", 0, null, null, null, 1033, "None")]
+		[OptionSetMetadataAttribute("None", 0)]
 		None = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Server-Side Synchronization or Email Router", 2, null, null, null, 1033, "Server-Side Synchronization or Email Router")]
+		[OptionSetMetadataAttribute("Server-Side Synchronization or Email Router", 2)]
 		ServerSideSynchronizationOrEmailRouter = 2,
 	}
 	
@@ -355,11 +355,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Mailing Address", 0, null, null, null, 1033, "Mailing Address")]
+		[OptionSetMetadataAttribute("Mailing Address", 0)]
 		MailingAddress = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Other Address", 1, null, null, null, 1033, "Other Address")]
+		[OptionSetMetadataAttribute("Other Address", 1)]
 		OtherAddress = 2,
 	}
 	
@@ -371,7 +371,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -383,19 +383,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Home Phone", 2, null, null, null, 1033, "Home Phone")]
+		[OptionSetMetadataAttribute("Home Phone", 2)]
 		HomePhone = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Main Phone", 0, null, null, null, 1033, "Main Phone")]
+		[OptionSetMetadataAttribute("Main Phone", 0)]
 		MainPhone = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Mobile Phone", 3, null, null, null, 1033, "Mobile Phone")]
+		[OptionSetMetadataAttribute("Mobile Phone", 3)]
 		MobilePhone = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Other Phone", 1, null, null, null, 1033, "Other Phone")]
+		[OptionSetMetadataAttribute("Other Phone", 1)]
 		OtherPhone = 2,
 	}
 	
@@ -468,6 +468,7 @@ namespace KPMG.CRM.DAL
 			public const string AzureDeletedOn = "azuredeletedon";
 			public const string AzureState = "azurestate";
 			public const string AzureStatenAMe = "azurestatename";
+			public const string Business_Unit_System_Users = "business_unit_system_users";
 			public const string BusinessUnitId = "businessunitid";
 			public const string BusinessUnitIdName = "businessunitidname";
 			public const string CalendarId = "calendarid";
@@ -491,6 +492,7 @@ namespace KPMG.CRM.DAL
 			public const string DisplayInServiceViews = "displayinserviceviews";
 			public const string DisplayInServiceViewsName = "displayinserviceviewsname";
 			public const string DomainName = "domainname";
+			public const string Email_AcceptingEntity_SystemUser = "Email_AcceptingEntity_SystemUser";
 			public const string EmailRouterAccessApproval = "emailrouteraccessapproval";
 			public const string EmailRouterAccessApprovalName = "emailrouteraccessapprovalname";
 			public const string EmployeeId = "employeeid";
@@ -520,26 +522,30 @@ namespace KPMG.CRM.DAL
 			public const string IsSyncWithDirectory = "issyncwithdirectory";
 			public const string JobTitle = "jobtitle";
 			public const string LastName = "lastname";
+			public const string Lk_ActivityPointer_CreatedBy = "Lk_ActivityPointer_CreatedBy";
+			public const string Lk_ActivityPointer_CreatedOnBehalfBy = "Lk_ActivityPointer_CreatedOnBehalfBy";
+			public const string Lk_ActivityPointer_ModifiedBy = "Lk_ActivityPointer_ModifiedBy";
+			public const string Lk_ActivityPointer_ModifiedOnBehalfBy = "Lk_ActivityPointer_ModifiedOnBehalfBy";
+			public const string Lk_BusinessUnit_CreatedOnBehalfBy = "Lk_BusinessUnit_CreatedOnBehalfBy";
+			public const string Lk_BusinessUnit_ModifiedOnBehalfBy = "Lk_BusinessUnit_ModifiedOnBehalfBy";
+			public const string Lk_BusinessUnitBase_CreatedBy = "Lk_BusinessUnitBase_CreatedBy";
+			public const string Lk_BusinessUnitBase_ModifiedBy = "Lk_BusinessUnitBase_ModifiedBy";
 			public const string Lk_Contact_CreatedOnBehalfBy = "Lk_Contact_CreatedOnBehalfBy";
 			public const string Lk_Contact_ModifiedOnBehalfBy = "Lk_Contact_ModifiedOnBehalfBy";
 			public const string Lk_ContactBase_CreatedBy = "Lk_ContactBase_CreatedBy";
 			public const string Lk_ContactBase_ModifiedBy = "Lk_ContactBase_ModifiedBy";
-			public const string Lk_KPMg_BookRoom_CreatedBy = "Lk_KPMg_BookRoom_CreatedBy";
-			public const string Lk_KPMg_BookRoom_CreatedOnBehalfBy = "Lk_KPMg_BookRoom_CreatedOnBehalfBy";
-			public const string Lk_KPMg_BookRoom_ModifiedBy = "Lk_KPMg_BookRoom_ModifiedBy";
-			public const string Lk_KPMg_BookRoom_ModifiedOnBehalfBy = "Lk_KPMg_BookRoom_ModifiedOnBehalfBy";
-			public const string Lk_KPMg_Building_CreatedBy = "Lk_KPMg_Building_CreatedBy";
-			public const string Lk_KPMg_Building_CreatedOnBehalfBy = "Lk_KPMg_Building_CreatedOnBehalfBy";
-			public const string Lk_KPMg_Building_ModifiedBy = "Lk_KPMg_Building_ModifiedBy";
-			public const string Lk_KPMg_Building_ModifiedOnBehalfBy = "Lk_KPMg_Building_ModifiedOnBehalfBy";
-			public const string Lk_KPMg_Room_CreatedBy = "Lk_KPMg_Room_CreatedBy";
-			public const string Lk_KPMg_Room_CreatedOnBehalfBy = "Lk_KPMg_Room_CreatedOnBehalfBy";
-			public const string Lk_KPMg_Room_ModifiedBy = "Lk_KPMg_Room_ModifiedBy";
-			public const string Lk_KPMg_Room_ModifiedOnBehalfBy = "Lk_KPMg_Room_ModifiedOnBehalfBy";
+			public const string Lk_Email_CreatedBy = "Lk_Email_CreatedBy";
+			public const string Lk_Email_CreatedOnBehalfBy = "Lk_Email_CreatedOnBehalfBy";
+			public const string Lk_Email_ModifiedBy = "Lk_Email_ModifiedBy";
+			public const string Lk_Email_ModifiedOnBehalfBy = "Lk_Email_ModifiedOnBehalfBy";
 			public const string ReferencingLk_SystemUser_CreatedOnBehalfBy = "lk_systemuser_createdonbehalfby";
 			public const string ReferencingLk_SystemUser_ModifiedOnBehalfBy = "lk_systemuser_modifiedonbehalfby";
 			public const string ReferencingLk_SystemUserBase_CreatedBy = "lk_systemuserbase_createdby";
 			public const string ReferencingLk_SystemUserBase_ModifiedBy = "lk_systemuserbase_modifiedby";
+			public const string Lk_TransactionCurrency_CreatedOnBehalfBy = "Lk_TransactionCurrency_CreatedOnBehalfBy";
+			public const string Lk_TransactionCurrency_ModifiedOnBehalfBy = "Lk_TransactionCurrency_ModifiedOnBehalfBy";
+			public const string Lk_TransactionCurrencyBase_CreatedBy = "Lk_TransactionCurrencyBase_CreatedBy";
+			public const string Lk_TransactionCurrencyBase_ModifiedBy = "Lk_TransactionCurrencyBase_ModifiedBy";
 			public const string MiddleName = "middlename";
 			public const string MobileAlertEmail = "mobilealertemail";
 			public const string MobileOfflineProfileId = "mobileofflineprofileid";
@@ -609,19 +615,21 @@ namespace KPMG.CRM.DAL
 			public const string SiteIdName = "siteidname";
 			public const string Skills = "skills";
 			public const string StageId = "stageid";
+			public const string System_User_Activity_Parties = "System_User_Activity_Parties";
 			public const string System_User_Contacts = "System_User_Contacts";
+			public const string SystemUser_Email_EmailSender = "SystemUser_Email_EmailSender";
 			public const string SystemUserId = "systemuserid";
 			public const string Id = "systemuserid";
 			public const string TerritoryId = "territoryid";
 			public const string TerritoryIdName = "territoryidname";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string Title = "title";
+			public const string TransactionCurrency_SystemUser = "TransactionCurrency_SystemUser";
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string TraversedPath = "traversedpath";
-			public const string User_KPMg_BookRoom = "User_KPMg_BookRoom";
-			public const string User_KPMg_Building = "User_KPMg_Building";
-			public const string User_KPMg_Room = "User_KPMg_Room";
+			public const string User_Activity = "User_Activity";
+			public const string User_Email = "User_Email";
 			public const string ReferencingUser_Parent_User = "user_parent_user";
 			public const string UserLicenseType = "userlicensetype";
 			public const string UserPuid = "userpuid";
@@ -3968,6 +3976,168 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
+		/// 1:N email_acceptingentity_systemuser
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("email_acceptingentity_systemuser")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Email_AcceptingEntity_SystemUser
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("email_acceptingentity_systemuser", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("email_acceptingentity_systemuser", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_activitypointer_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_createdby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> Lk_ActivityPointer_CreatedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_createdby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_createdby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_activitypointer_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> Lk_ActivityPointer_CreatedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_createdonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_activitypointer_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_modifiedby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> Lk_ActivityPointer_ModifiedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_modifiedby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_modifiedby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_activitypointer_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> Lk_ActivityPointer_ModifiedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("lk_activitypointer_modifiedonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_businessunit_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.BusinessUnit> Lk_BusinessUnit_CreatedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunit_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunit_createdonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_businessunit_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunit_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.BusinessUnit> Lk_BusinessUnit_ModifiedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunit_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunit_modifiedonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_businessunitbase_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_createdby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.BusinessUnit> Lk_BusinessUnitBase_CreatedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunitbase_createdby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunitbase_createdby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_businessunitbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_businessunitbase_modifiedby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.BusinessUnit> Lk_BusinessUnitBase_ModifiedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunitbase_modifiedby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("lk_businessunitbase_modifiedby", null, value);
+			}
+		}
+		
+		/// <summary>
 		/// 1:N lk_contact_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_contact_createdonbehalfby")]
@@ -4040,218 +4210,74 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// 1:N lk_kpmg_bookroom_createdby
+		/// 1:N lk_email_createdby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_bookroom_createdby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> Lk_KPMg_BookRoom_CreatedBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_createdby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Lk_Email_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_createdby", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_createdby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_createdby", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_createdby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N lk_kpmg_bookroom_createdonbehalfby
+		/// 1:N lk_email_createdonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_bookroom_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> Lk_KPMg_BookRoom_CreatedOnBehalfBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Lk_Email_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_createdonbehalfby", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_createdonbehalfby", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_createdonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N lk_kpmg_bookroom_modifiedby
+		/// 1:N lk_email_modifiedby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_bookroom_modifiedby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> Lk_KPMg_BookRoom_ModifiedBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_modifiedby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Lk_Email_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_modifiedby", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_modifiedby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_modifiedby", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_modifiedby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N lk_kpmg_bookroom_modifiedonbehalfby
+		/// 1:N lk_email_modifiedonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_bookroom_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> Lk_KPMg_BookRoom_ModifiedOnBehalfBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Lk_Email_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_modifiedonbehalfby", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_modifiedonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("lk_kpmg_bookroom_modifiedonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_building_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_createdby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Building> Lk_KPMg_Building_CreatedBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_createdby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_createdby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_building_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Building> Lk_KPMg_Building_CreatedOnBehalfBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_createdonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_createdonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_building_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_modifiedby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Building> Lk_KPMg_Building_ModifiedBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_modifiedby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_building_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Building> Lk_KPMg_Building_ModifiedOnBehalfBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_modifiedonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("lk_kpmg_building_modifiedonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_room_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_createdby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Room> Lk_KPMg_Room_CreatedBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_createdby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_createdby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_room_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_createdonbehalfby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Room> Lk_KPMg_Room_CreatedOnBehalfBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_createdonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_createdonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_room_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_modifiedby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Room> Lk_KPMg_Room_ModifiedBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_modifiedby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// 1:N lk_kpmg_room_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_modifiedonbehalfby")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Room> Lk_KPMg_Room_ModifiedOnBehalfBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_modifiedonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("lk_kpmg_room_modifiedonbehalfby", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("lk_email_modifiedonbehalfby", null, value);
 			}
 		}
 		
@@ -4328,6 +4354,96 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
+		/// 1:N lk_transactioncurrency_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrency_createdonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.TransactionCurrency> Lk_TransactionCurrency_CreatedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrency_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrency_createdonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_transactioncurrency_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrency_modifiedonbehalfby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.TransactionCurrency> Lk_TransactionCurrency_ModifiedOnBehalfBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrency_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrency_modifiedonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_transactioncurrencybase_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrencybase_createdby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.TransactionCurrency> Lk_TransactionCurrencyBase_CreatedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrencybase_createdby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrencybase_createdby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_transactioncurrencybase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrencybase_modifiedby")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.TransactionCurrency> Lk_TransactionCurrencyBase_ModifiedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrencybase_modifiedby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.TransactionCurrency>("lk_transactioncurrencybase_modifiedby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N system_user_activity_parties
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_activity_parties")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityParty> System_User_Activity_Parties
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityParty>("system_user_activity_parties", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityParty>("system_user_activity_parties", null, value);
+			}
+		}
+		
+		/// <summary>
 		/// 1:N system_user_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_contacts")]
@@ -4346,56 +4462,56 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// 1:N user_kpmg_bookroom
+		/// 1:N SystemUser_Email_EmailSender
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_kpmg_bookroom")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> User_KPMg_BookRoom
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SystemUser_Email_EmailSender")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> SystemUser_Email_EmailSender
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("user_kpmg_bookroom", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("SystemUser_Email_EmailSender", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("user_kpmg_bookroom", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("SystemUser_Email_EmailSender", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N user_kpmg_building
+		/// 1:N user_activity
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_kpmg_building")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Building> User_KPMg_Building
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_activity")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> User_Activity
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("user_kpmg_building", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("user_activity", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Building>("user_kpmg_building", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("user_activity", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N user_kpmg_room
+		/// 1:N user_email
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_kpmg_room")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Room> User_KPMg_Room
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_email")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> User_Email
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("user_kpmg_room", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("user_email", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("user_kpmg_room", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("user_email", null, value);
 			}
 		}
 		
@@ -4414,6 +4530,25 @@ namespace KPMG.CRM.DAL
 			set
 			{
 				this.SetRelatedEntities<KPMG.CRM.DAL.SystemUser>("user_parent_user", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 business_unit_system_users
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_system_users")]
+		public KPMG.CRM.DAL.BusinessUnit Business_Unit_System_Users
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<KPMG.CRM.DAL.BusinessUnit>("business_unit_system_users", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<KPMG.CRM.DAL.BusinessUnit>("business_unit_system_users", null, value);
 			}
 		}
 		
@@ -4480,6 +4615,25 @@ namespace KPMG.CRM.DAL
 			get
 			{
 				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_systemuserbase_modifiedby", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_SystemUser
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_SystemUser")]
+		public KPMG.CRM.DAL.TransactionCurrency TransactionCurrency_SystemUser
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<KPMG.CRM.DAL.TransactionCurrency>("TransactionCurrency_SystemUser", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<KPMG.CRM.DAL.TransactionCurrency>("TransactionCurrency_SystemUser", null, value);
 			}
 		}
 		

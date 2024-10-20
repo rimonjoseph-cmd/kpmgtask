@@ -1,5 +1,6 @@
 ﻿using KPMG.CRM.Business.Room.DTO;
 using KPMG.CRM.Business.TimeSlot.BLL;
+using KPMG.CRM.Business.TimeSlot.DTO;
 using KPMG.CRM.DAL;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
@@ -34,6 +35,7 @@ namespace KPMG.CRM.Business.Room.BLL
 
         public async Task<List<RoomModel>> getAvailable(DateTime dateInput)
         {
+            List<RoomModel> result = new List<RoomModel>();
 
             QueryExpression roomsqueryExpression = new QueryExpression(KPMg_Room.EntityLogicalName);
             roomsqueryExpression.ColumnSet = new ColumnSet(true);
@@ -75,28 +77,48 @@ namespace KPMG.CRM.Business.Room.BLL
             }
 
             #region get bookRoom available
+            var timeslotArr = await this.timeSlotBLL.getAll();
+            TimeSlotDTO firsttimeslot = timeslotArr.OrderBy(n => n.TimeId).First();
+            TimeSlotDTO lasttimeslot = timeslotArr.OrderBy(n => n.TimeId).Last();
+            
             foreach (var roomitem in roomsModel) { 
+                Dictionary<int,bool> keyValuePairs = new Dictionary<int,bool>();
+                foreach (var timesl in timeslotArr) { 
+                    keyValuePairs.Add(timesl.TimeId, false);
+                }
                 QueryExpression roomitemBookQuery = new QueryExpression(KPMg_BookRoom.EntityLogicalName);
                 roomitemBookQuery.ColumnSet = new ColumnSet(true);
-                roomitemBookQuery.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_BookingDay,ConditionOperator.Equal, new DateTime(2024, 10, 19));
-                roomitemBookQuery.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_BookRoomId,ConditionOperator.Equal, roomitem.id);
+                roomitemBookQuery.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_BookedZoneDependent,ConditionOperator.On, dateInput);
+                roomitemBookQuery.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_Room,ConditionOperator.Equal, roomitem.id);
 
-                //LinkEntity timeslotLink = new LinkEntity(KPMg_BookRoom.EntityLogicalName, "kpmg_predefinedtimeslots",
-                //    KPMg_BookRoom.Fields., KPMg_Building.PrimaryIdAttribute, JoinOperator.Inner);
-                 
-                //buildingLink.Columns = new ColumnSet(KPMg_Building.Fields.KPMg_BuildingCode, KPMg_Building.Fields.StateCode);
-                //buildingLink.EntityAlias = buildingalias;
-                //// Add a condition to filter for active buildings (statecode = 0)
-                //buildingLink.LinkCriteria.AddCondition(KPMg_Building.Fields.StateCode, ConditionOperator.Equal, (int)KPMg_Building_StateCode.Active);
+                string fromtimeslot = "fromtimeslot";
+                LinkEntity timeslotLinkFrom = new LinkEntity(KPMg_BookRoom.EntityLogicalName, KPMg_PredefinedTimeSlots.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_From, KPMg_PredefinedTimeSlots.PrimaryIdAttribute, JoinOperator.Inner);
+                timeslotLinkFrom.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId);
+                timeslotLinkFrom.EntityAlias = fromtimeslot;
+                roomitemBookQuery.LinkEntities.Add(timeslotLinkFrom);
 
-                //// Add the LinkEntity to the QueryExpression
-                //roomsqueryExpression.LinkEntities.Add(buildingLink);
+                string totimeslot = "totimeslot";
+                LinkEntity totimeslotLink = new LinkEntity(KPMg_BookRoom.EntityLogicalName, KPMg_PredefinedTimeSlots.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_To, KPMg_PredefinedTimeSlots.PrimaryIdAttribute, JoinOperator.Inner);
+                totimeslotLink.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId);
+                totimeslotLink.EntityAlias = totimeslot;
+                roomitemBookQuery.LinkEntities.Add(totimeslotLink);
                 var bookroom = await this.organizationService.RetrieveMultipleAsync(roomitemBookQuery);
-                
+
+                foreach (var bookroomitem in bookroom.Entities)
+                {
+                    int from = Convert.ToInt32(bookroomitem.GetAttributeValue<AliasedValue>($"{fromtimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId}")?.Value);
+                    int to = Convert.ToInt32(bookroomitem.GetAttributeValue<AliasedValue>($"{totimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId}")?.Value);
+                    for (int i = from; i < to; i++)
+                        keyValuePairs[i] = true ;
+                    if(to == lasttimeslot.TimeId)
+                        keyValuePairs[to] = true ;
+                }
+                if (keyValuePairs.ContainsValue(false))
+                    result.Add(roomitem);
             }
             #endregion
 
-            return roomsModel;
+            return result;
         }
     }
 }

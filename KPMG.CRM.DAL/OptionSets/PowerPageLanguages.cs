@@ -20,183 +20,183 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Arabic", 0, "#0000ff", "", "", 1033, "Arabic")]
+		[OptionSetMetadataAttribute("Arabic", 0, "#0000ff")]
 		Arabic = 1025,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Basque - Basque", 1, "#0000ff", "", "", 1033, "Basque - Basque")]
+		[OptionSetMetadataAttribute("Basque - Basque", 1, "#0000ff")]
 		BasqueBasque = 1069,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Bulgarian - Bulgaria", 2, "#0000ff", "", "", 1033, "Bulgarian - Bulgaria")]
+		[OptionSetMetadataAttribute("Bulgarian - Bulgaria", 2, "#0000ff")]
 		BulgarianBulgaria = 1026,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Catalan - Catalan", 3, "#0000ff", "", "", 1033, "Catalan - Catalan")]
+		[OptionSetMetadataAttribute("Catalan - Catalan", 3, "#0000ff")]
 		CatalanCatalan = 1027,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Chinese - China", 4, "#0000ff", "", "", 1033, "Chinese - China")]
+		[OptionSetMetadataAttribute("Chinese - China", 4, "#0000ff")]
 		ChineseChina = 2052,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Chinese - Hong Kong SAR", 5, "#0000ff", "", "", 1033, "Chinese - Hong Kong SAR")]
+		[OptionSetMetadataAttribute("Chinese - Hong Kong SAR", 5, "#0000ff")]
 		ChineseHongKongSar = 3076,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Chinese - Traditional", 6, "#0000ff", "", "", 1033, "Chinese - Traditional")]
+		[OptionSetMetadataAttribute("Chinese - Traditional", 6, "#0000ff")]
 		ChineseTraditional = 1028,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Croatian - Croatia", 7, "#0000ff", "", "", 1033, "Croatian - Croatia")]
+		[OptionSetMetadataAttribute("Croatian - Croatia", 7, "#0000ff")]
 		CroatianCroatia = 1050,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Czech - Czech Republic", 8, "#0000ff", "", "", 1033, "Czech - Czech Republic")]
+		[OptionSetMetadataAttribute("Czech - Czech Republic", 8, "#0000ff")]
 		CzechCzechRepublic = 1029,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Danish - Denmark", 9, "#0000ff", "", "", 1033, "Danish - Denmark")]
+		[OptionSetMetadataAttribute("Danish - Denmark", 9, "#0000ff")]
 		DanishDenmark = 1030,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Dutch - Netherlands", 10, "#0000ff", "", "", 1033, "Dutch - Netherlands")]
+		[OptionSetMetadataAttribute("Dutch - Netherlands", 10, "#0000ff")]
 		DutchNetherlands = 1043,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("English", 11, "#0000ff", "", "", 1033, "English")]
+		[OptionSetMetadataAttribute("English", 11, "#0000ff")]
 		English = 1033,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Estonian - Estonia", 12, "#0000ff", "", "", 1033, "Estonian - Estonia")]
+		[OptionSetMetadataAttribute("Estonian - Estonia", 12, "#0000ff")]
 		EstonianEstonia = 1061,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Finnish - Finland", 13, "#0000ff", "", "", 1033, "Finnish - Finland")]
+		[OptionSetMetadataAttribute("Finnish - Finland", 13, "#0000ff")]
 		FinnishFinland = 1035,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("French - France", 14, "#0000ff", "", "", 1033, "French - France")]
+		[OptionSetMetadataAttribute("French - France", 14, "#0000ff")]
 		FrenchFrance = 1036,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Galician - Spain", 15, "#0000ff", "", "", 1033, "Galician - Spain")]
+		[OptionSetMetadataAttribute("Galician - Spain", 15, "#0000ff")]
 		GalicianSpain = 1110,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("German - Germany", 16, "#0000ff", "", "", 1033, "German - Germany")]
+		[OptionSetMetadataAttribute("German - Germany", 16, "#0000ff")]
 		GermanGermany = 1031,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Greek - Greece", 17, "#0000ff", "", "", 1033, "Greek - Greece")]
+		[OptionSetMetadataAttribute("Greek - Greece", 17, "#0000ff")]
 		GreekGreece = 1032,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Hebrew", 18, "#0000ff", "", "", 1033, "Hebrew")]
+		[OptionSetMetadataAttribute("Hebrew", 18, "#0000ff")]
 		Hebrew = 1037,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Hindi - India", 19, "#0000ff", "", "", 1033, "Hindi - India")]
+		[OptionSetMetadataAttribute("Hindi - India", 19, "#0000ff")]
 		HindiIndia = 1081,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Hungarian - Hungary", 20, "#0000ff", "", "", 1033, "Hungarian - Hungary")]
+		[OptionSetMetadataAttribute("Hungarian - Hungary", 20, "#0000ff")]
 		HungarianHungary = 1038,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Indonesian - Indonesia", 21, "#0000ff", "", "", 1033, "Indonesian - Indonesia")]
+		[OptionSetMetadataAttribute("Indonesian - Indonesia", 21, "#0000ff")]
 		IndonesianIndonesia = 1057,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Italian - Italy", 22, "#0000ff", "", "", 1033, "Italian - Italy")]
+		[OptionSetMetadataAttribute("Italian - Italy", 22, "#0000ff")]
 		ItalianItaly = 1040,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Japanese - Japan", 23, "#0000ff", "", "", 1033, "Japanese - Japan")]
+		[OptionSetMetadataAttribute("Japanese - Japan", 23, "#0000ff")]
 		JapaneseJapan = 1041,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Kazakh - Kazakhstan", 24, "#0000ff", "", "", 1033, "Kazakh - Kazakhstan")]
+		[OptionSetMetadataAttribute("Kazakh - Kazakhstan", 24, "#0000ff")]
 		KazakhKazakhstan = 1087,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Korean - Korea", 25, "#0000ff", "", "", 1033, "Korean - Korea")]
+		[OptionSetMetadataAttribute("Korean - Korea", 25, "#0000ff")]
 		KoreanKorea = 1042,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Latvian - Latvia", 26, "#0000ff", "", "", 1033, "Latvian - Latvia")]
+		[OptionSetMetadataAttribute("Latvian - Latvia", 26, "#0000ff")]
 		LatvianLatvia = 1062,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Lithuanian - Lithuania", 27, "#0000ff", "", "", 1033, "Lithuanian - Lithuania")]
+		[OptionSetMetadataAttribute("Lithuanian - Lithuania", 27, "#0000ff")]
 		LithuanianLithuania = 1063,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Malay - Malaysia", 28, "#0000ff", "", "", 1033, "Malay - Malaysia")]
+		[OptionSetMetadataAttribute("Malay - Malaysia", 28, "#0000ff")]
 		MalayMalaysia = 1086,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Norwegian (Bokmål) - Norway", 29, "#0000ff", "", "", 1033, "Norwegian (Bokmål) - Norway")]
+		[OptionSetMetadataAttribute("Norwegian (Bokmål) - Norway", 29, "#0000ff")]
 		NorwegianBokmLNorway = 1044,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Polish - Poland", 30, "#0000ff", "", "", 1033, "Polish - Poland")]
+		[OptionSetMetadataAttribute("Polish - Poland", 30, "#0000ff")]
 		PolishPoland = 1045,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Portuguese - Brazil", 31, "#0000ff", "", "", 1033, "Portuguese - Brazil")]
+		[OptionSetMetadataAttribute("Portuguese - Brazil", 31, "#0000ff")]
 		PortugueseBrazil = 1046,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Portuguese - Portugal", 32, "#0000ff", "", "", 1033, "Portuguese - Portugal")]
+		[OptionSetMetadataAttribute("Portuguese - Portugal", 32, "#0000ff")]
 		PortuguesePortugal = 2070,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Romanian - Romania", 33, "#0000ff", "", "", 1033, "Romanian - Romania")]
+		[OptionSetMetadataAttribute("Romanian - Romania", 33, "#0000ff")]
 		RomanianRomania = 1048,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Russian - Russia", 34, "#0000ff", "", "", 1033, "Russian - Russia")]
+		[OptionSetMetadataAttribute("Russian - Russia", 34, "#0000ff")]
 		RussianRussia = 1049,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Serbian (Cyrillic) - Serbia", 35, "#0000ff", "", "", 1033, "Serbian (Cyrillic) - Serbia")]
+		[OptionSetMetadataAttribute("Serbian (Cyrillic) - Serbia", 35, "#0000ff")]
 		SerbianCyrillicSerbia = 3098,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Serbian (Latin) - Serbia", 36, "#0000ff", "", "", 1033, "Serbian (Latin) - Serbia")]
+		[OptionSetMetadataAttribute("Serbian (Latin) - Serbia", 36, "#0000ff")]
 		SerbianLatinSerbia = 2074,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Slovak - Slovakia", 37, "#0000ff", "", "", 1033, "Slovak - Slovakia")]
+		[OptionSetMetadataAttribute("Slovak - Slovakia", 37, "#0000ff")]
 		SlovakSlovakia = 1051,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Slovenian - Slovenia", 38, "#0000ff", "", "", 1033, "Slovenian - Slovenia")]
+		[OptionSetMetadataAttribute("Slovenian - Slovenia", 38, "#0000ff")]
 		SlovenianSlovenia = 1060,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Spanish (Traditional Sort) - Spain", 39, "#0000ff", "", "", 1033, "Spanish (Traditional Sort) - Spain")]
+		[OptionSetMetadataAttribute("Spanish (Traditional Sort) - Spain", 39, "#0000ff")]
 		SpanishTraditionalSortSpain = 3082,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Swedish - Sweden", 40, "#0000ff", "", "", 1033, "Swedish - Sweden")]
+		[OptionSetMetadataAttribute("Swedish - Sweden", 40, "#0000ff")]
 		SwedishSweden = 1053,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Thai - Thailand", 41, "#0000ff", "", "", 1033, "Thai - Thailand")]
+		[OptionSetMetadataAttribute("Thai - Thailand", 41, "#0000ff")]
 		ThaiThailand = 1054,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Turkish - Türkiye", 42, "#0000ff", "", "", 1033, "Turkish - Türkiye")]
+		[OptionSetMetadataAttribute("Turkish - Türkiye", 42, "#0000ff")]
 		TurkishTRkiye = 1055,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Ukrainian - Ukraine", 43, "#0000ff", "", "", 1033, "Ukrainian - Ukraine")]
+		[OptionSetMetadataAttribute("Ukrainian - Ukraine", 43, "#0000ff")]
 		UkrainianUkraine = 1058,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Vietnamese - Vietnam", 44, "#0000ff", "", "", 1033, "Vietnamese - Vietnam")]
+		[OptionSetMetadataAttribute("Vietnamese - Vietnam", 44, "#0000ff")]
 		VietnameseVietnam = 1066,
 	}
 }

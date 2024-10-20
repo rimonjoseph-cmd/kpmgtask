@@ -29,6 +29,39 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
+		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.ActivityParty"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<KPMG.CRM.DAL.ActivityParty> ActivityPartySet
+		{
+			get
+			{
+				return this.CreateQuery<KPMG.CRM.DAL.ActivityParty>();
+			}
+		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.ActivityPointer"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<KPMG.CRM.DAL.ActivityPointer> ActivityPointerSet
+		{
+			get
+			{
+				return this.CreateQuery<KPMG.CRM.DAL.ActivityPointer>();
+			}
+		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.BusinessUnit"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<KPMG.CRM.DAL.BusinessUnit> BusinessUnitSet
+		{
+			get
+			{
+				return this.CreateQuery<KPMG.CRM.DAL.BusinessUnit>();
+			}
+		}
+		
+		/// <summary>
 		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.Contact"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<KPMG.CRM.DAL.Contact> ContactSet
@@ -40,35 +73,13 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.KPMg_BookRoom"/> entities.
+		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.Email"/> entities.
 		/// </summary>
-		public System.Linq.IQueryable<KPMG.CRM.DAL.KPMg_BookRoom> KPMg_BookRoomSet
+		public System.Linq.IQueryable<KPMG.CRM.DAL.Email> EmailSet
 		{
 			get
 			{
-				return this.CreateQuery<KPMG.CRM.DAL.KPMg_BookRoom>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.KPMg_Building"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<KPMG.CRM.DAL.KPMg_Building> KPMg_BuildingSet
-		{
-			get
-			{
-				return this.CreateQuery<KPMG.CRM.DAL.KPMg_Building>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.KPMg_Room"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<KPMG.CRM.DAL.KPMg_Room> KPMg_RoomSet
-		{
-			get
-			{
-				return this.CreateQuery<KPMG.CRM.DAL.KPMg_Room>();
+				return this.CreateQuery<KPMG.CRM.DAL.Email>();
 			}
 		}
 		
@@ -80,6 +91,17 @@ namespace KPMG.CRM.DAL
 			get
 			{
 				return this.CreateQuery<KPMG.CRM.DAL.SystemUser>();
+			}
+		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="KPMG.CRM.DAL.TransactionCurrency"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<KPMG.CRM.DAL.TransactionCurrency> TransactionCurrencySet
+		{
+			get
+			{
+				return this.CreateQuery<KPMG.CRM.DAL.TransactionCurrency>();
 			}
 		}
 	}

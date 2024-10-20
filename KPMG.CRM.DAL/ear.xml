@@ -28,17 +28,23 @@
     <CreateOneFilePerOptionSet>true</CreateOneFilePerOptionSet>
     <DeleteFilesFromOutputFolders>false</DeleteFilesFromOutputFolders>
     <EntitiesToSkip />
-    <EntitiesWhitelist>contact|
+    <EntitiesWhitelist>activityparty|
+activitypointer|
+businessunit|
+contact|
+email|
 kpmg_bookroom|
 kpmg_building|
+kpmg_predefinedtimeslots|
 kpmg_room|
-systemuser</EntitiesWhitelist>
+systemuser|
+transactioncurrency</EntitiesWhitelist>
     <EntityAttributeSpecifiedNames />
     <EntityClassNameOverrides />
     <EntityPrefixesToSkip />
     <EntityPrefixesWhitelist />
     <GenerateActionAttributeNameConsts>true</GenerateActionAttributeNameConsts>
-    <GenerateAllOptionSetLabelMetadata>true</GenerateAllOptionSetLabelMetadata>
+    <GenerateAllOptionSetLabelMetadata>false</GenerateAllOptionSetLabelMetadata>
     <GenerateAttributeNameConsts>true</GenerateAttributeNameConsts>
     <GenerateAnonymousTypeConstructor>true</GenerateAnonymousTypeConstructor>
     <GenerateConstructorsSansLogicalName>true</GenerateConstructorsSansLogicalName>
@@ -119,7 +125,7 @@ VoiceMail</TokenCapitalizationOverrides>
   <MetadataQueryProviderService>DLaB.ModelBuilderExtensions.MetadataQueryProviderService,DLaB.ModelBuilderExtensions</MetadataQueryProviderService>
   <NamingService>DLaB.ModelBuilderExtensions.NamingService,DLaB.ModelBuilderExtensions</NamingService>
   <OptionSetsTypesFolder>OptionSets</OptionSetsTypesFolder>
-  <Namespace>KPMG.CRM.DAL</Namespace>
+  <Namespace>DataverseModel</Namespace>
   <ServiceContextName>DataverseContext</ServiceContextName>
   <SuppressGeneratedCodeAttribute>true</SuppressGeneratedCodeAttribute>
   <SettingsVersion>2.2024.10.16</SettingsVersion>

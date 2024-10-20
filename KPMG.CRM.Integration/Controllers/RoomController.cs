@@ -26,8 +26,10 @@ namespace KPMG.CRM.Integration.Controllers
         [HttpGet("getavailable")]
         public async Task<List<RoomModel>> GetAvailable(string bookedDate)
         {
-            DateTime f = DateTime.Parse(bookedDate);
-            return await this.roomBLL.getAvailable(f);
+            // Convert the string to a DateTime object using DateTime.ParseExact
+            DateTime dateTime;
+            DateTime.TryParseExact(bookedDate, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out dateTime);
+            return await this.roomBLL.getAvailable(dateTime);
         }
 
         // GET api/<RoomController>/5

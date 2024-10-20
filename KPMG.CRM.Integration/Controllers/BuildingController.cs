@@ -36,6 +36,18 @@ namespace KPMG.CRM.Integration.Controllers
         public void Post([FromBody] string value)
         {
         }
+        // POST api/<BuildingController>
+        [HttpPost("block/{buildingid}")]
+        public string blockBuilding(Guid buildingid)
+        {
+            return this.buildingBLL.Block(buildingid) ? "building blocked successfully" : "no action taken";
+        }
+        // POST api/<BuildingController>
+        [HttpPost("unblock/{buildingid}")]
+        public string unblockBuilding(Guid buildingid)
+        {
+            return this.buildingBLL.UnBlock(buildingid) ? "building activated successfully" : "no action taken";
+        }
 
         // PUT api/<BuildingController>/5
         [HttpPut("{id}")]

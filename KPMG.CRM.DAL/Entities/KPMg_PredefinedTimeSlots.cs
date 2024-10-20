@@ -13,10 +13,10 @@ namespace KPMG.CRM.DAL
 	
 	
 	/// <summary>
-	/// Status of the Building
+	/// Status of the Predefined Time Slots
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum KPMg_Building_StateCode
+	public enum KPMg_PredefinedTimeSlots_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -29,10 +29,10 @@ namespace KPMG.CRM.DAL
 	}
 	
 	/// <summary>
-	/// Reason for the status of the Building
+	/// Reason for the status of the Predefined Time Slots
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum KPMg_Building_StatusCode
+	public enum KPMg_PredefinedTimeSlots_StatusCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -45,16 +45,16 @@ namespace KPMG.CRM.DAL
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kpmg_building")]
-	public partial class KPMg_Building : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kpmg_predefinedtimeslots")]
+	public partial class KPMg_PredefinedTimeSlots : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the kpmg_building entity
+		/// Available fields, a the time of codegen, for the kpmg_predefinedtimeslots entity
 		/// </summary>
 		public partial class Fields
 		{
-			public const string Business_Unit_KPMg_Building = "business_unit_kpmg_building";
+			public const string Business_Unit_KPMg_PredefinedTimeSlots = "business_unit_kpmg_predefinedtimeslots";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
@@ -63,17 +63,16 @@ namespace KPMG.CRM.DAL
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
 			public const string ImportSequenceNumber = "importsequencenumber";
-			public const string KPMg_BuildingCode = "kpmg_buildingcode";
-			public const string KPMg_BuildingId = "kpmg_buildingid";
-			public const string Id = "kpmg_buildingid";
-			public const string KPMg_IsBlocked = "kpmg_isblocked";
-			public const string KPMg_IsBlockedName = "kpmg_isblockedname";
+			public const string KPMg_BookRoom_From_KPMg_PredefinedTimeSlots = "KPMg_BookRoom_From_KPMg_PredefinedTimeSlots";
+			public const string KPMg_BookRoom_To_KPMg_PredefinedTimeSlots = "KPMg_BookRoom_To_KPMg_PredefinedTimeSlots";
 			public const string KPMg_Name = "kpmg_name";
-			public const string KPMg_Room_KPMg_Building_KPMg_Building = "KPMg_Room_KPMg_Building_KPMg_Building";
-			public const string Lk_KPMg_Building_CreatedBy = "lk_kpmg_building_createdby";
-			public const string Lk_KPMg_Building_CreatedOnBehalfBy = "lk_kpmg_building_createdonbehalfby";
-			public const string Lk_KPMg_Building_ModifiedBy = "lk_kpmg_building_modifiedby";
-			public const string Lk_KPMg_Building_ModifiedOnBehalfBy = "lk_kpmg_building_modifiedonbehalfby";
+			public const string KPMg_PredefinedTimeSlotsId = "kpmg_predefinedtimeslotsid";
+			public const string Id = "kpmg_predefinedtimeslotsid";
+			public const string KPMg_TimeId = "kpmg_timeid";
+			public const string Lk_KPMg_PredefinedTimeSlots_CreatedBy = "lk_kpmg_predefinedtimeslots_createdby";
+			public const string Lk_KPMg_PredefinedTimeSlots_CreatedOnBehalfBy = "lk_kpmg_predefinedtimeslots_createdonbehalfby";
+			public const string Lk_KPMg_PredefinedTimeSlots_ModifiedBy = "lk_kpmg_predefinedtimeslots_modifiedby";
+			public const string Lk_KPMg_PredefinedTimeSlots_ModifiedOnBehalfBy = "lk_kpmg_predefinedtimeslots_modifiedonbehalfby";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -94,25 +93,25 @@ namespace KPMG.CRM.DAL
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
-			public const string User_KPMg_Building = "user_kpmg_building";
+			public const string User_KPMg_PredefinedTimeSlots = "user_kpmg_predefinedtimeslots";
 			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Building(System.Guid id) : 
+		public KPMg_PredefinedTimeSlots(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Building(string keyName, object keyValue) : 
+		public KPMg_PredefinedTimeSlots(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Building(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public KPMg_PredefinedTimeSlots(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -121,22 +120,22 @@ namespace KPMG.CRM.DAL
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Building() : 
+		public KPMg_PredefinedTimeSlots() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "kpmg_buildingid";
+		public const string PrimaryIdAttribute = "kpmg_predefinedtimeslotsid";
 		
 		public const string PrimaryNameAttribute = "kpmg_name";
 		
-		public const string EntitySchemaName = "kpmg_Building";
+		public const string EntitySchemaName = "kpmg_PredefinedTimeSlots";
 		
-		public const string EntityLogicalName = "kpmg_building";
+		public const string EntityLogicalName = "kpmg_predefinedtimeslots";
 		
-		public const string EntityLogicalCollectionName = "kpmg_buildings";
+		public const string EntityLogicalCollectionName = "kpmg_predefinedtimeslotses";
 		
-		public const string EntitySetName = "kpmg_buildings";
+		public const string EntitySetName = "kpmg_predefinedtimeslotses";
 		
 		/// <summary>
 		/// Unique identifier of the user who created the record.
@@ -268,94 +267,6 @@ namespace KPMG.CRM.DAL
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_buildingcode")]
-		public string KPMg_BuildingCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("kpmg_buildingcode");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_buildingcode", value);
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_buildingid")]
-		public System.Nullable<System.Guid> KPMg_BuildingId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("kpmg_buildingid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_buildingid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_buildingid")]
-		public override System.Guid Id
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return base.Id;
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.KPMg_BuildingId = value;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_isblocked")]
-		public System.Nullable<bool> KPMg_IsBlocked
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("kpmg_isblocked");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_isblocked", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_isblockedname")]
-		public string KPMg_IsBlockedName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("kpmg_isblocked"))
-				{
-					return this.FormattedValues["kpmg_isblocked"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_name")]
 		public string KPMg_Name
 		{
@@ -368,6 +279,62 @@ namespace KPMG.CRM.DAL
 			set
 			{
 				this.SetAttributeValue("kpmg_name", value);
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_predefinedtimeslotsid")]
+		public System.Nullable<System.Guid> KPMg_PredefinedTimeSlotsId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("kpmg_predefinedtimeslotsid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("kpmg_predefinedtimeslotsid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_predefinedtimeslotsid")]
+		public override System.Guid Id
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return base.Id;
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.KPMg_PredefinedTimeSlotsId = value;
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_timeid")]
+		public System.Nullable<int> KPMg_TimeId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("kpmg_timeid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("kpmg_timeid", value);
 			}
 		}
 		
@@ -616,15 +583,15 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Status of the Building
+		/// Status of the Predefined Time Slots
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual KPMg_Building_StateCode? StateCode
+		public virtual KPMg_PredefinedTimeSlots_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((KPMg_Building_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((KPMg_PredefinedTimeSlots_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -651,15 +618,15 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Reason for the status of the Building
+		/// Reason for the status of the Predefined Time Slots
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual KPMg_Building_StatusCode? StatusCode
+		public virtual KPMg_PredefinedTimeSlots_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((KPMg_Building_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((KPMg_PredefinedTimeSlots_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -735,114 +702,132 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// 1:N kpmg_Room_kpmg_Building_kpmg_Building
+		/// 1:N kpmg_bookroom_From_kpmg_predefinedtimeslots
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kpmg_Room_kpmg_Building_kpmg_Building")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_Room> KPMg_Room_KPMg_Building_KPMg_Building
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kpmg_bookroom_From_kpmg_predefinedtimeslots")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> KPMg_BookRoom_From_KPMg_PredefinedTimeSlots
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("kpmg_Room_kpmg_Building_kpmg_Building", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_bookroom_From_kpmg_predefinedtimeslots", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_Room>("kpmg_Room_kpmg_Building_kpmg_Building", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_bookroom_From_kpmg_predefinedtimeslots", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_kpmg_building
+		/// 1:N kpmg_bookroom_To_kpmg_predefinedtimeslots
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kpmg_bookroom_To_kpmg_predefinedtimeslots")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> KPMg_BookRoom_To_KPMg_PredefinedTimeSlots
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_bookroom_To_kpmg_predefinedtimeslots", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_bookroom_To_kpmg_predefinedtimeslots", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 business_unit_kpmg_predefinedtimeslots
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_kpmg_building")]
-		public KPMG.CRM.DAL.BusinessUnit Business_Unit_KPMg_Building
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_kpmg_predefinedtimeslots")]
+		public KPMG.CRM.DAL.BusinessUnit Business_Unit_KPMg_PredefinedTimeSlots
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.BusinessUnit>("business_unit_kpmg_building", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.BusinessUnit>("business_unit_kpmg_predefinedtimeslots", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_building_createdby
+		/// N:1 lk_kpmg_predefinedtimeslots_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_createdby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Building_CreatedBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_predefinedtimeslots_createdby")]
+		public KPMG.CRM.DAL.SystemUser Lk_KPMg_PredefinedTimeSlots_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_building_createdby", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_predefinedtimeslots_createdby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_building_createdonbehalfby
+		/// N:1 lk_kpmg_predefinedtimeslots_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_createdonbehalfby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Building_CreatedOnBehalfBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_predefinedtimeslots_createdonbehalfby")]
+		public KPMG.CRM.DAL.SystemUser Lk_KPMg_PredefinedTimeSlots_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_building_createdonbehalfby", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_predefinedtimeslots_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_building_createdonbehalfby", null, value);
+				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_predefinedtimeslots_createdonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_building_modifiedby
+		/// N:1 lk_kpmg_predefinedtimeslots_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_modifiedby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Building_ModifiedBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_predefinedtimeslots_modifiedby")]
+		public KPMG.CRM.DAL.SystemUser Lk_KPMg_PredefinedTimeSlots_ModifiedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_building_modifiedby", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_predefinedtimeslots_modifiedby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_building_modifiedonbehalfby
+		/// N:1 lk_kpmg_predefinedtimeslots_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_building_modifiedonbehalfby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Building_ModifiedOnBehalfBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_predefinedtimeslots_modifiedonbehalfby")]
+		public KPMG.CRM.DAL.SystemUser Lk_KPMg_PredefinedTimeSlots_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_building_modifiedonbehalfby", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_predefinedtimeslots_modifiedonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_building_modifiedonbehalfby", null, value);
+				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_predefinedtimeslots_modifiedonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 user_kpmg_building
+		/// N:1 user_kpmg_predefinedtimeslots
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_kpmg_building")]
-		public KPMG.CRM.DAL.SystemUser User_KPMg_Building
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_kpmg_predefinedtimeslots")]
+		public KPMG.CRM.DAL.SystemUser User_KPMg_PredefinedTimeSlots
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("user_kpmg_building", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("user_kpmg_predefinedtimeslots", null);
 			}
 		}
 		
@@ -851,7 +836,7 @@ namespace KPMG.CRM.DAL
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Building(object anonymousType) : 
+		public KPMg_PredefinedTimeSlots(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -869,9 +854,9 @@ namespace KPMG.CRM.DAL
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["kpmg_buildingid"] = base.Id;
+                        Attributes["kpmg_predefinedtimeslotsid"] = base.Id;
                         break;
-                    case "kpmg_buildingid":
+                    case "kpmg_predefinedtimeslotsid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

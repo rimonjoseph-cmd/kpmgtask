@@ -1,4 +1,5 @@
 ﻿using KPMG.CRM.DAL;
+using Microsoft.Crm.Sdk.Messages;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -16,6 +17,32 @@ namespace KPMG.CRM.Business.Building
         public BuildingBLL(IOrganizationServiceAsync organizationService) {
             _service = organizationService;
         }
+        private bool changestatus(int statusValue, int statusReasonValue, Guid buildingid)
+        {
+            try
+            {
+                EntityReference entityRef = new EntityReference(KPMg_Building.EntityLogicalName, buildingid);
+
+                SetStateRequest setStateRequest = new SetStateRequest
+                {
+                    EntityMoniker = entityRef,
+                    State = new OptionSetValue(statusValue),
+                    Status = new OptionSetValue(statusReasonValue)
+                };
+
+                // Execute the request to change the status of the record
+                _service.Execute(setStateRequest);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Block(Guid buildingid)
+        {
+            return this.changestatus(1, 736630002,buildingid);
+        }
 
         public async Task<EntityCollection> getall()
         {
@@ -24,8 +51,10 @@ namespace KPMG.CRM.Business.Building
             return await _service.RetrieveMultipleAsync(query);
         }
 
-        public void testbuildingbll()
+        public bool UnBlock(Guid buildingid)
         {
+            return this.changestatus(0, 1, buildingid);
+
         }
     }
 }

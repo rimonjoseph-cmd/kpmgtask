@@ -20,15 +20,15 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Decision Maker", 0, null, null, null, 1033, "Decision Maker")]
+		[OptionSetMetadataAttribute("Decision Maker", 0)]
 		DecisionMaker = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Employee", 1, null, null, null, 1033, "Employee")]
+		[OptionSetMetadataAttribute("Employee", 1)]
 		Employee = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Influencer", 2, null, null, null, 1033, "Influencer")]
+		[OptionSetMetadataAttribute("Influencer", 2)]
 		Influencer = 3,
 	}
 	
@@ -40,19 +40,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Bill To", 0, null, null, null, 1033, "Bill To")]
+		[OptionSetMetadataAttribute("Bill To", 0)]
 		BillTo = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Other", 3, null, null, null, 1033, "Other")]
+		[OptionSetMetadataAttribute("Other", 3)]
 		Other = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Primary", 2, null, null, null, 1033, "Primary")]
+		[OptionSetMetadataAttribute("Primary", 2)]
 		Primary = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Ship To", 1, null, null, null, 1033, "Ship To")]
+		[OptionSetMetadataAttribute("Ship To", 1)]
 		ShipTo = 2,
 	}
 	
@@ -64,11 +64,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FOB", 0, null, null, null, 1033, "FOB")]
+		[OptionSetMetadataAttribute("FOB", 0)]
 		Fob = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("No Charge", 1, null, null, null, 1033, "No Charge")]
+		[OptionSetMetadataAttribute("No Charge", 1)]
 		NoCharge = 2,
 	}
 	
@@ -80,31 +80,31 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Airborne", 0, null, null, null, 1033, "Airborne")]
+		[OptionSetMetadataAttribute("Airborne", 0)]
 		Airborne = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("DHL", 1, null, null, null, 1033, "DHL")]
+		[OptionSetMetadataAttribute("DHL", 1)]
 		Dhl = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FedEx", 2, null, null, null, 1033, "FedEx")]
+		[OptionSetMetadataAttribute("FedEx", 2)]
 		Fedex = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Full Load", 5, null, null, null, 1033, "Full Load")]
+		[OptionSetMetadataAttribute("Full Load", 5)]
 		FullLoad = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Postal Mail", 4, null, null, null, 1033, "Postal Mail")]
+		[OptionSetMetadataAttribute("Postal Mail", 4)]
 		PostalMail = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("UPS", 3, null, null, null, 1033, "UPS")]
+		[OptionSetMetadataAttribute("UPS", 3)]
 		Ups = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Will Call", 6, null, null, null, 1033, "Will Call")]
+		[OptionSetMetadataAttribute("Will Call", 6)]
 		WillCall = 7,
 	}
 	
@@ -116,7 +116,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -128,7 +128,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -140,7 +140,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -152,7 +152,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -164,7 +164,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -176,7 +176,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -188,7 +188,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -200,7 +200,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -212,7 +212,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -224,19 +224,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Divorced", 2, null, null, null, 1033, "Divorced")]
+		[OptionSetMetadataAttribute("Divorced", 2)]
 		Divorced = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Married", 1, null, null, null, 1033, "Married")]
+		[OptionSetMetadataAttribute("Married", 1)]
 		Married = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Single", 0, null, null, null, 1033, "Single")]
+		[OptionSetMetadataAttribute("Single", 0)]
 		Single = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Widowed", 3, null, null, null, 1033, "Widowed")]
+		[OptionSetMetadataAttribute("Widowed", 3)]
 		Widowed = 4,
 	}
 	
@@ -248,11 +248,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Female", 1, null, null, null, 1033, "Female")]
+		[OptionSetMetadataAttribute("Female", 1)]
 		Female = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Male", 0, null, null, null, 1033, "Male")]
+		[OptionSetMetadataAttribute("Male", 0)]
 		Male = 1,
 	}
 	
@@ -264,7 +264,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -276,7 +276,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -288,19 +288,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Blocker", 2, "#FF0000", null, "", 1033, "Blocker")]
+		[OptionSetMetadataAttribute("Blocker", 2, "#FF0000")]
 		Blocker = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Decision maker", 0, "#32C100", null, "", 1033, "Decision maker")]
+		[OptionSetMetadataAttribute("Decision maker", 0, "#32C100")]
 		DecisionMaker = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Influencer", 1, "#FFD74B", null, "", 1033, "Influencer")]
+		[OptionSetMetadataAttribute("Influencer", 1, "#FFD74B")]
 		Influencer = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Unknown", 3, "#E1DFDD", null, "", 1033, "Unknown")]
+		[OptionSetMetadataAttribute("Unknown", 3, "#E1DFDD")]
 		Unknown = 3,
 	}
 	
@@ -312,15 +312,15 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Ignore", 2, "#0000ff", null, "", 1033, "Ignore")]
+		[OptionSetMetadataAttribute("Ignore", 2, "#0000ff")]
 		Ignore = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("No Feedback", 0, "#0000ff", null, "", 1033, "No Feedback")]
+		[OptionSetMetadataAttribute("No Feedback", 0, "#0000ff")]
 		NoFeedback = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Not at Company", 1, "#0000ff", null, "", 1033, "Not at Company")]
+		[OptionSetMetadataAttribute("Not at Company", 1, "#0000ff")]
 		NotAtCompany = 1,
 	}
 	
@@ -332,19 +332,19 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("2% 10, Net 30", 1, null, null, null, 1033, "2% 10, Net 30")]
+		[OptionSetMetadataAttribute("2% 10, Net 30", 1)]
 		_210Net30 = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Net 30", 0, null, null, null, 1033, "Net 30")]
+		[OptionSetMetadataAttribute("Net 30", 0)]
 		Net30 = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Net 45", 2, null, null, null, 1033, "Net 45")]
+		[OptionSetMetadataAttribute("Net 45", 2)]
 		Net45 = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Net 60", 3, null, null, null, 1033, "Net 60")]
+		[OptionSetMetadataAttribute("Net 60", 3)]
 		Net60 = 4,
 	}
 	
@@ -356,31 +356,31 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Friday", 5, null, null, null, 1033, "Friday")]
+		[OptionSetMetadataAttribute("Friday", 5)]
 		Friday = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Monday", 1, null, null, null, 1033, "Monday")]
+		[OptionSetMetadataAttribute("Monday", 1)]
 		Monday = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Saturday", 6, null, null, null, 1033, "Saturday")]
+		[OptionSetMetadataAttribute("Saturday", 6)]
 		Saturday = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Sunday", 0, null, null, null, 1033, "Sunday")]
+		[OptionSetMetadataAttribute("Sunday", 0)]
 		Sunday = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Thursday", 4, null, null, null, 1033, "Thursday")]
+		[OptionSetMetadataAttribute("Thursday", 4)]
 		Thursday = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Tuesday", 2, null, null, null, 1033, "Tuesday")]
+		[OptionSetMetadataAttribute("Tuesday", 2)]
 		Tuesday = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Wednesday", 3, null, null, null, 1033, "Wednesday")]
+		[OptionSetMetadataAttribute("Wednesday", 3)]
 		Wednesday = 3,
 	}
 	
@@ -392,15 +392,15 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Afternoon", 1, null, null, null, 1033, "Afternoon")]
+		[OptionSetMetadataAttribute("Afternoon", 1)]
 		Afternoon = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Evening", 2, null, null, null, 1033, "Evening")]
+		[OptionSetMetadataAttribute("Evening", 2)]
 		Evening = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Morning", 0, null, null, null, 1033, "Morning")]
+		[OptionSetMetadataAttribute("Morning", 0)]
 		Morning = 1,
 	}
 	
@@ -412,23 +412,23 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Any", 0, null, null, null, 1033, "Any")]
+		[OptionSetMetadataAttribute("Any", 0)]
 		Any = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Email", 1, null, null, null, 1033, "Email")]
+		[OptionSetMetadataAttribute("Email", 1)]
 		Email = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Fax", 3, null, null, null, 1033, "Fax")]
+		[OptionSetMetadataAttribute("Fax", 3)]
 		Fax = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Mail", 4, null, null, null, 1033, "Mail")]
+		[OptionSetMetadataAttribute("Mail", 4)]
 		Mail = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Phone", 2, null, null, null, 1033, "Phone")]
+		[OptionSetMetadataAttribute("Phone", 2)]
 		Phone = 3,
 	}
 	
@@ -440,7 +440,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -452,11 +452,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Active", 0, null, null, null, 1033, "Active")]
+		[OptionSetMetadataAttribute("Active", 0)]
 		Active = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Inactive", 1, null, null, null, 1033, "Inactive")]
+		[OptionSetMetadataAttribute("Inactive", 1)]
 		Inactive = 1,
 	}
 	
@@ -468,11 +468,11 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Active", 0, null, null, null, 1033, "Active")]
+		[OptionSetMetadataAttribute("Active", 0)]
 		Active = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Inactive", 1, null, null, null, 1033, "Inactive")]
+		[OptionSetMetadataAttribute("Inactive", 1)]
 		Inactive = 2,
 	}
 	
@@ -484,7 +484,7 @@ namespace KPMG.CRM.DAL
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Default Value", 0, null, null, null, 1033, "Default Value")]
+		[OptionSetMetadataAttribute("Default Value", 0)]
 		DefaultValue = 1,
 	}
 	
@@ -636,13 +636,18 @@ namespace KPMG.CRM.DAL
 			public const string AssistantName = "assistantname";
 			public const string AssistantPhone = "assistantphone";
 			public const string Birthdate = "birthdate";
+			public const string Business_Unit_Contacts = "business_unit_contacts";
 			public const string Business2 = "business2";
 			public const string BusinessCard = "businesscard";
 			public const string BusinessCardAttributes = "businesscardattributes";
 			public const string Callback = "callback";
 			public const string ChildrensNames = "childrensnames";
 			public const string Company = "company";
+			public const string Contact_Activity_Parties = "Contact_Activity_Parties";
+			public const string Contact_ActivityPointers = "Contact_ActivityPointers";
 			public const string ReferencingContact_Customer_Contacts = "contact_customer_contacts";
+			public const string Contact_Email_EmailSender = "Contact_Email_EmailSender";
+			public const string Contact_Emails = "Contact_Emails";
 			public const string ReferencingContact_Master_Contact = "contact_master_contact";
 			public const string Contact_Owning_User = "contact_owning_user";
 			public const string ContactId = "contactid";
@@ -714,7 +719,6 @@ namespace KPMG.CRM.DAL
 			public const string IsBackOfficeCustomerName = "isbackofficecustomername";
 			public const string IsPrivateName = "isprivatename";
 			public const string JobTitle = "jobtitle";
-			public const string KPMg_BookRoom_Contact_Contact = "KPMg_BookRoom_Contact_Contact";
 			public const string LastName = "lastname";
 			public const string LastOnHoldTime = "lastonholdtime";
 			public const string LastUsedInCampaign = "lastusedincampaign";
@@ -833,6 +837,7 @@ namespace KPMG.CRM.DAL
 			public const string TerritoryCodename = "territorycodename";
 			public const string TimeSpentByMeOnEmailAndMeetings = "timespentbymeonemailandmeetings";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
+			public const string TransactionCurrency_Contact = "transactioncurrency_contact";
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string TraversedPath = "traversedpath";
@@ -6532,6 +6537,42 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
+		/// 1:N contact_activity_parties
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_activity_parties")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityParty> Contact_Activity_Parties
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityParty>("contact_activity_parties", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityParty>("contact_activity_parties", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Contact_ActivityPointers
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_ActivityPointers")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> Contact_ActivityPointers
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("Contact_ActivityPointers", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("Contact_ActivityPointers", null, value);
+			}
+		}
+		
+		/// <summary>
 		/// 1:N contact_customer_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
@@ -6546,6 +6587,42 @@ namespace KPMG.CRM.DAL
 			set
 			{
 				this.SetRelatedEntities<KPMG.CRM.DAL.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Contact_Email_EmailSender
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_Email_EmailSender")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Contact_Email_EmailSender
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("Contact_Email_EmailSender", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("Contact_Email_EmailSender", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Contact_Emails
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_Emails")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> Contact_Emails
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("Contact_Emails", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("Contact_Emails", null, value);
 			}
 		}
 		
@@ -6568,20 +6645,16 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// 1:N kpmg_BookRoom_Contact_Contact
+		/// N:1 business_unit_contacts
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kpmg_BookRoom_Contact_Contact")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> KPMg_BookRoom_Contact_Contact
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
+		public KPMG.CRM.DAL.BusinessUnit Business_Unit_Contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_BookRoom_Contact_Contact", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_BookRoom_Contact_Contact", null, value);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.BusinessUnit>("business_unit_contacts", null);
 			}
 		}
 		
@@ -6714,6 +6787,25 @@ namespace KPMG.CRM.DAL
 			set
 			{
 				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("system_user_contacts", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 transactioncurrency_contact
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("transactioncurrency_contact")]
+		public KPMG.CRM.DAL.TransactionCurrency TransactionCurrency_Contact
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<KPMG.CRM.DAL.TransactionCurrency>("transactioncurrency_contact", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<KPMG.CRM.DAL.TransactionCurrency>("transactioncurrency_contact", null, value);
 			}
 		}
 		

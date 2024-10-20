@@ -9,7 +9,8 @@ namespace KPMG.CRM.Business.Building
 {
     public interface IBuildingBLL
     {
-        void testbuildingbll();
         Task<EntityCollection> getall();
+        bool Block(Guid buildingid);
+        bool UnBlock(Guid buildingid);
     }
 }

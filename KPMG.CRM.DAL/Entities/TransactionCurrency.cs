@@ -13,10 +13,26 @@ namespace KPMG.CRM.DAL
 	
 	
 	/// <summary>
-	/// Status of the Room
+	/// Used Transaction Currency entity
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum KPMg_Room_StateCode
+	public enum TransactionCurrency_CurrencyType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Custom", 1)]
+		Custom = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("System", 0)]
+		System = 0,
+	}
+	
+	/// <summary>
+	/// Status of the transaction currency.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum TransactionCurrency_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -29,10 +45,10 @@ namespace KPMG.CRM.DAL
 	}
 	
 	/// <summary>
-	/// Reason for the status of the Room
+	/// Reason for the status of the transaction currency.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum KPMg_Room_StatusCode
+	public enum TransactionCurrency_StatusCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -44,17 +60,19 @@ namespace KPMG.CRM.DAL
 		Inactive = 2,
 	}
 	
+	/// <summary>
+	/// Currency in which a financial transaction is carried out.
+	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kpmg_room")]
-	public partial class KPMg_Room : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("transactioncurrency")]
+	public partial class TransactionCurrency : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the kpmg_room entity
+		/// Available fields, a the time of codegen, for the transactioncurrency entity
 		/// </summary>
 		public partial class Fields
 		{
-			public const string Business_Unit_KPMg_Room = "business_unit_kpmg_room";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
@@ -62,20 +80,22 @@ namespace KPMG.CRM.DAL
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
+			public const string CurrencyName = "currencyname";
+			public const string CurrencyPrecision = "currencyprecision";
+			public const string CurrencySymbol = "currencysymbol";
+			public const string CurrencyType = "currencytype";
+			public const string CurrencyTypeName = "currencytypename";
+			public const string EntityImage = "entityimage";
+			public const string EntityImage_Timestamp = "entityimage_timestamp";
+			public const string EntityImage_Url = "entityimage_url";
+			public const string EntityImageId = "entityimageid";
+			public const string ExchangerAte = "exchangerate";
 			public const string ImportSequenceNumber = "importsequencenumber";
-			public const string KPMg_BookRoom_KPMg_Room_KPMg_Room = "KPMg_BookRoom_KPMg_Room_KPMg_Room";
-			public const string KPMg_Building = "kpmg_building";
-			public const string KPMg_BuildingName = "kpmg_buildingname";
-			public const string KPMg_GeneratedCode = "kpmg_generatedcode";
-			public const string KPMg_Name = "kpmg_name";
-			public const string KPMg_Room_KPMg_Building_KPMg_Building = "kpmg_Room_kpmg_Building_kpmg_Building";
-			public const string KPMg_RoomCode = "kpmg_roomcode";
-			public const string KPMg_RoomId = "kpmg_roomid";
-			public const string Id = "kpmg_roomid";
-			public const string Lk_KPMg_Room_CreatedBy = "lk_kpmg_room_createdby";
-			public const string Lk_KPMg_Room_CreatedOnBehalfBy = "lk_kpmg_room_createdonbehalfby";
-			public const string Lk_KPMg_Room_ModifiedBy = "lk_kpmg_room_modifiedby";
-			public const string Lk_KPMg_Room_ModifiedOnBehalfBy = "lk_kpmg_room_modifiedonbehalfby";
+			public const string IsoCurrencyCode = "isocurrencycode";
+			public const string Lk_TransactionCurrency_CreatedOnBehalfBy = "lk_transactioncurrency_createdonbehalfby";
+			public const string Lk_TransactionCurrency_ModifiedOnBehalfBy = "lk_transactioncurrency_modifiedonbehalfby";
+			public const string Lk_TransactionCurrencyBase_CreatedBy = "lk_transactioncurrencybase_createdby";
+			public const string Lk_TransactionCurrencyBase_ModifiedBy = "lk_transactioncurrencybase_modifiedby";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -83,38 +103,36 @@ namespace KPMG.CRM.DAL
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
+			public const string OrganizationId = "organizationid";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
-			public const string OwnerId = "ownerid";
-			public const string OwnerIdName = "owneridname";
-			public const string OwnerIdYomiName = "owneridyominame";
-			public const string OwningBusinessUnit = "owningbusinessunit";
-			public const string OwningBusinessUnitName = "owningbusinessunitname";
-			public const string OwningTeam = "owningteam";
-			public const string OwningUser = "owninguser";
 			public const string StateCode = "statecode";
 			public const string StateCodename = "statecodename";
 			public const string StatusCode = "statuscode";
 			public const string StatusCodename = "statuscodename";
-			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
-			public const string User_KPMg_Room = "user_kpmg_room";
-			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
+			public const string TransactionCurrency_ActivityPointer = "TransactionCurrency_ActivityPointer";
+			public const string TransactionCurrency_BusinessUnit = "TransactionCurrency_BusinessUnit";
+			public const string TransactionCurrency_Contact = "TransactionCurrency_Contact";
+			public const string TransactionCurrency_Email = "TransactionCurrency_Email";
+			public const string TransactionCurrency_SystemUser = "TransactionCurrency_SystemUser";
+			public const string TransactionCurrencyId = "transactioncurrencyid";
+			public const string Id = "transactioncurrencyid";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Room(System.Guid id) : 
+		public TransactionCurrency(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Room(string keyName, object keyValue) : 
+		public TransactionCurrency(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Room(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public TransactionCurrency(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -123,25 +141,25 @@ namespace KPMG.CRM.DAL
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Room() : 
+		public TransactionCurrency() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "kpmg_roomid";
+		public const string PrimaryIdAttribute = "transactioncurrencyid";
 		
-		public const string PrimaryNameAttribute = "kpmg_name";
+		public const string PrimaryNameAttribute = "currencyname";
 		
-		public const string EntitySchemaName = "kpmg_Room";
+		public const string EntitySchemaName = "TransactionCurrency";
 		
-		public const string EntityLogicalName = "kpmg_room";
+		public const string EntityLogicalName = "transactioncurrency";
 		
-		public const string EntityLogicalCollectionName = "kpmg_rooms";
+		public const string EntityLogicalCollectionName = "transactioncurrencies";
 		
-		public const string EntitySetName = "kpmg_rooms";
+		public const string EntitySetName = "transactioncurrencies";
 		
 		/// <summary>
-		/// Unique identifier of the user who created the record.
+		/// Unique identifier of the user who created the transaction currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -188,7 +206,7 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Date and time when the record was created.
+		/// Date and time when the transaction currency was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -201,7 +219,7 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the record.
+		/// Unique identifier of the delegate user who created the transactioncurrency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -253,7 +271,165 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Sequence number of the import that created this record.
+		/// Name of the transaction currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencyname")]
+		public string CurrencyName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("currencyname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("currencyname", value);
+			}
+		}
+		
+		/// <summary>
+		/// Number of decimal places that can be used for currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencyprecision")]
+		public System.Nullable<int> CurrencyPrecision
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("currencyprecision");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("currencyprecision", value);
+			}
+		}
+		
+		/// <summary>
+		/// Symbol for the transaction currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencysymbol")]
+		public string CurrencySymbol
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("currencysymbol");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("currencysymbol", value);
+			}
+		}
+		
+		/// <summary>
+		/// Currency type that can be used for new currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencytype")]
+		public virtual TransactionCurrency_CurrencyType? CurrencyType
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((TransactionCurrency_CurrencyType?)(EntityOptionSetEnum.GetEnum(this, "currencytype")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("currencytype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencytypename")]
+		public string CurrencyTypeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("currencytype"))
+				{
+					return this.FormattedValues["currencytype"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// The default image for the entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage")]
+		public byte[] EntityImage
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<byte[]>("entityimage");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("entityimage", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_timestamp")]
+		public System.Nullable<long> EntityImage_Timestamp
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<long>>("entityimage_timestamp");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_url")]
+		public string EntityImage_Url
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("entityimage_url");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
+		public System.Nullable<System.Guid> EntityImageId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("entityimageid");
+			}
+		}
+		
+		/// <summary>
+		/// Exchange rate between the transaction currency and the base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
+		public System.Nullable<decimal> ExchangerAte
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("exchangerate", value);
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the data import or data migration that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
@@ -270,126 +446,26 @@ namespace KPMG.CRM.DAL
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_building")]
-		public Microsoft.Xrm.Sdk.EntityReference KPMg_Building
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("kpmg_building");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_building", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_buildingname")]
-		public string KPMg_BuildingName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("kpmg_building"))
-				{
-					return this.FormattedValues["kpmg_building"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_generatedcode")]
-		public string KPMg_GeneratedCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("kpmg_generatedcode");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_generatedcode", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_name")]
-		public string KPMg_Name
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("kpmg_name");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_name", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_roomcode")]
-		public string KPMg_RoomCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("kpmg_roomcode");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kpmg_roomcode", value);
-			}
-		}
-		
 		/// <summary>
-		/// Unique identifier for entity instances
+		/// ISO currency code for the transaction currency.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_roomid")]
-		public System.Nullable<System.Guid> KPMg_RoomId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isocurrencycode")]
+		public string IsoCurrencyCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("kpmg_roomid");
+				return this.GetAttributeValue<string>("isocurrencycode");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("kpmg_roomid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_roomid")]
-		public override System.Guid Id
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return base.Id;
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.KPMg_RoomId = value;
+				this.SetAttributeValue("isocurrencycode", value);
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who modified the record.
+		/// Unique identifier of the user who last modified the transaction currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -436,7 +512,7 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Date and time when the record was modified.
+		/// Date and time when the transaction currency was last modified.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -449,7 +525,7 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who modified the record.
+		/// Unique identifier of the delegate user who last modified the transactioncurrency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -501,6 +577,19 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
+		/// Unique identifier of the organization associated with the transaction currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
+		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("organizationid");
+			}
+		}
+		
+		/// <summary>
 		/// Date and time that the record was migrated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
@@ -519,129 +608,15 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Owner Id
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
-		public Microsoft.Xrm.Sdk.EntityReference OwnerId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ownerid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("ownerid", value);
-			}
-		}
-		
-		/// <summary>
-		/// Name of the owner
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridname")]
-		public string OwnerIdName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("ownerid"))
-				{
-					return this.FormattedValues["ownerid"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Yomi name of the owner
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridyominame")]
-		public string OwnerIdYomiName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("ownerid"))
-				{
-					return this.FormattedValues["ownerid"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for the business unit that owns the record
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunitname")]
-		public string OwningBusinessUnitName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("owningbusinessunit"))
-				{
-					return this.FormattedValues["owningbusinessunit"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for the team that owns the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
-		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for the user that owns the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
-		public Microsoft.Xrm.Sdk.EntityReference OwningUser
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-		}
-		
-		/// <summary>
-		/// Status of the Room
+		/// Status of the transaction currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual KPMg_Room_StateCode? StateCode
+		public virtual TransactionCurrency_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((KPMg_Room_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((TransactionCurrency_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -668,15 +643,15 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// Reason for the status of the Room
+		/// Reason for the status of the transaction currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual KPMg_Room_StatusCode? StatusCode
+		public virtual TransactionCurrency_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((KPMg_Room_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((TransactionCurrency_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -703,43 +678,48 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// For internal use only.
+		/// Unique identifier of the transaction currency.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
-		public System.Nullable<int> TimeZoneRuleVersionNumber
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		public System.Nullable<System.Guid> TransactionCurrencyId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("transactioncurrencyid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.SetAttributeValue("transactioncurrencyid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
 			}
 		}
 		
-		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UtcConversionTimeZoneCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		public override System.Guid Id
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+				return base.Id;
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.TransactionCurrencyId = value;
 			}
 		}
 		
 		/// <summary>
-		/// Version Number
+		/// Version number of the transaction currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
@@ -752,133 +732,158 @@ namespace KPMG.CRM.DAL
 		}
 		
 		/// <summary>
-		/// 1:N kpmg_BookRoom_kpmg_Room_kpmg_Room
+		/// 1:N TransactionCurrency_ActivityPointer
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kpmg_BookRoom_kpmg_Room_kpmg_Room")]
-		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.KPMg_BookRoom> KPMg_BookRoom_KPMg_Room_KPMg_Room
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_ActivityPointer")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.ActivityPointer> TransactionCurrency_ActivityPointer
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_BookRoom_kpmg_Room_kpmg_Room", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("TransactionCurrency_ActivityPointer", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<KPMG.CRM.DAL.KPMg_BookRoom>("kpmg_BookRoom_kpmg_Room_kpmg_Room", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.ActivityPointer>("TransactionCurrency_ActivityPointer", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_kpmg_room
+		/// 1:N TransactionCurrency_BusinessUnit
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_kpmg_room")]
-		public KPMG.CRM.DAL.BusinessUnit Business_Unit_KPMg_Room
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_BusinessUnit")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.BusinessUnit> TransactionCurrency_BusinessUnit
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.BusinessUnit>("business_unit_kpmg_room", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 kpmg_Room_kpmg_Building_kpmg_Building
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kpmg_building")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kpmg_Room_kpmg_Building_kpmg_Building")]
-		public KPMG.CRM.DAL.KPMg_Building KPMg_Room_KPMg_Building_KPMg_Building
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.KPMg_Building>("kpmg_Room_kpmg_Building_kpmg_Building", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("TransactionCurrency_BusinessUnit", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<KPMG.CRM.DAL.KPMg_Building>("kpmg_Room_kpmg_Building_kpmg_Building", null, value);
+				this.SetRelatedEntities<KPMG.CRM.DAL.BusinessUnit>("TransactionCurrency_BusinessUnit", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_room_createdby
+		/// 1:N transactioncurrency_contact
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_createdby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Room_CreatedBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("transactioncurrency_contact")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Contact> TransactionCurrency_Contact
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_room_createdby", null);
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Contact>("transactioncurrency_contact", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.Contact>("transactioncurrency_contact", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_room_createdonbehalfby
+		/// 1:N TransactionCurrency_Email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_Email")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.Email> TransactionCurrency_Email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.Email>("TransactionCurrency_Email", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.Email>("TransactionCurrency_Email", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N TransactionCurrency_SystemUser
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_SystemUser")]
+		public System.Collections.Generic.IEnumerable<KPMG.CRM.DAL.SystemUser> TransactionCurrency_SystemUser
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<KPMG.CRM.DAL.SystemUser>("TransactionCurrency_SystemUser", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<KPMG.CRM.DAL.SystemUser>("TransactionCurrency_SystemUser", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_transactioncurrency_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_createdonbehalfby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Room_CreatedOnBehalfBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrency_createdonbehalfby")]
+		public KPMG.CRM.DAL.SystemUser Lk_TransactionCurrency_CreatedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_room_createdonbehalfby", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_transactioncurrency_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_room_createdonbehalfby", null, value);
+				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_transactioncurrency_createdonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kpmg_room_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_modifiedby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Room_ModifiedBy
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_room_modifiedby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_kpmg_room_modifiedonbehalfby
+		/// N:1 lk_transactioncurrency_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kpmg_room_modifiedonbehalfby")]
-		public KPMG.CRM.DAL.SystemUser Lk_KPMg_Room_ModifiedOnBehalfBy
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrency_modifiedonbehalfby")]
+		public KPMG.CRM.DAL.SystemUser Lk_TransactionCurrency_ModifiedOnBehalfBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_room_modifiedonbehalfby", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_transactioncurrency_modifiedonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_kpmg_room_modifiedonbehalfby", null, value);
+				this.SetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_transactioncurrency_modifiedonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 user_kpmg_room
+		/// N:1 lk_transactioncurrencybase_createdby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_kpmg_room")]
-		public KPMG.CRM.DAL.SystemUser User_KPMg_Room
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrencybase_createdby")]
+		public KPMG.CRM.DAL.SystemUser Lk_TransactionCurrencyBase_CreatedBy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("user_kpmg_room", null);
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_transactioncurrencybase_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_transactioncurrencybase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_transactioncurrencybase_modifiedby")]
+		public KPMG.CRM.DAL.SystemUser Lk_TransactionCurrencyBase_ModifiedBy
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<KPMG.CRM.DAL.SystemUser>("lk_transactioncurrencybase_modifiedby", null);
 			}
 		}
 		
@@ -887,7 +892,7 @@ namespace KPMG.CRM.DAL
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KPMg_Room(object anonymousType) : 
+		public TransactionCurrency(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -905,9 +910,9 @@ namespace KPMG.CRM.DAL
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["kpmg_roomid"] = base.Id;
+                        Attributes["transactioncurrencyid"] = base.Id;
                         break;
-                    case "kpmg_roomid":
+                    case "transactioncurrencyid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

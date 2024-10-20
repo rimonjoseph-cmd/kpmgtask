@@ -18,7 +18,7 @@
     "createOneFilePerOptionSet": true,
     "deleteFilesFromOutputFolders": false,
     "generateMessageAttributeNameConsts": true,
-    "generateAllOptionSetLabelMetadata": true,
+    "generateAllOptionSetLabelMetadata": false,
     "generateAttributeNameConsts": true,
     "generateAnonymousTypeConstructor": true,
     "generateConstructorsSansLogicalName": true,
@@ -90,11 +90,13 @@
   "emitFieldsClasses": true,
   "emitVirtualAttributes": true,
   "entityNamesFilter": [
+    "activityparty",
+    "activitypointer",
+    "businessunit",
     "contact",
-    "kpmg_bookroom",
-    "kpmg_building",
-    "kpmg_room",
-    "systemuser"
+    "email",
+    "systemuser",
+    "transactioncurrency"
   ],
   "entityTypesFolder": "Entities",
   "generateActions": true,
