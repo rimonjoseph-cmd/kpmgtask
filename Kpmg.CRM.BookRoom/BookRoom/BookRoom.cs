@@ -20,11 +20,20 @@ namespace Kpmg.CRM.BookRooms
         public BookRoomClass(IOrganizationService service) {
             _organizationService = service;
         }
-        public void validateifBookedExistBefore(IOrganizationService organizationService,DateTime bookingDate, EntityReference roomId, EntityReference timeSlot)
+        private int gettimeslotvalue(Guid id)
         {
-           // throw new InvalidPluginExecutionException(roomId.Id.ToString() + "  "+ bookingDate +"  "+ timeSlot.Id);
+            var timeslotentity  = _organizationService.Retrieve(predefinedtimeslotsSchemaName,id,new ColumnSet(true));
+            if (timeslotentity != null && timeslotentity.Contains("kpmg_timeid")) {
+                return timeslotentity.GetAttributeValue<int>("kpmg_timeid");
+            }
+            return -1;
+        }
+        public void validateifBookedExistBefore(IOrganizationService organizationService,DateTime bookingDate, EntityReference roomId, Entity entityBookRoom)
+        {
+            //get from and to timeslots linked with new bookroom
+            int from = this.gettimeslotvalue(entityBookRoom.GetAttributeValue<EntityReference>("kpmg_from").Id);
+            int to   = this.gettimeslotvalue(entityBookRoom.GetAttributeValue<EntityReference>("kpmg_to").Id);
 
-            // Check for existing bookings
             QueryExpression queryBookAlreadyExist = new QueryExpression(bookroomSchemaName)
             {
                 ColumnSet = new ColumnSet(false),
@@ -33,15 +42,54 @@ namespace Kpmg.CRM.BookRooms
                     Conditions =
                     {
                         new ConditionExpression("kpmg_room", ConditionOperator.Equal, roomId.Id),
-                        new ConditionExpression("kpmg_bookingday", ConditionOperator.Equal, bookingDate),
-                        new ConditionExpression("kpmg_predefinedtimeslots", ConditionOperator.Equal, timeSlot.Id)
+                        new ConditionExpression("kpmg_bookedzonedependent", ConditionOperator.On, bookingDate),
                     }
                 }
             };
+            // Create a LinkEntity for the Building relationship
+            string Fromalias = "from";
+            LinkEntity fromLink = new LinkEntity("kpmg_room", "kpmg_predefinedtimeslots",
+                 "kpmg_from",
+                 "kpmg_predefinedtimeslotsid", 
+                JoinOperator.Inner);
 
+            fromLink.Columns = new ColumnSet(true);
+            fromLink.EntityAlias = Fromalias;
+            //fromLink.LinkCriteria.AddCondition("kpmg_timeid", ConditionOperator.LessEqual, from);
+            //fromLink.LinkCriteria.AddCondition("kpmg_timeid", ConditionOperator.LessThan, to);
+
+            // Add the LinkEntity to the QueryExpression
+            queryBookAlreadyExist.LinkEntities.Add(fromLink);
+
+            string Toalias = "to";
+            LinkEntity toLink = new LinkEntity("kpmg_room", "kpmg_predefinedtimeslots",
+                 "kpmg_to",
+                 "kpmg_predefinedtimeslotsid",
+                JoinOperator.Inner);
+
+            toLink.Columns = new ColumnSet(true);
+            toLink.EntityAlias = Toalias;
+            //toLink.LinkCriteria.AddCondition("kpmg_timeid", ConditionOperator.GreaterThan, from);
+            //toLink.LinkCriteria.AddCondition("kpmg_timeid", ConditionOperator.GreaterEqual, to);
+
+            // Add the LinkEntity to the QueryExpression
+            queryBookAlreadyExist.LinkEntities.Add(toLink);
             var existingBookings = organizationService.RetrieveMultiple(queryBookAlreadyExist);
+            if (existingBookings?.Entities?.Count() == 0)
+                return;
 
-            if (existingBookings?.Entities.Count > 0)
+            var exbook = existingBookings.Entities.Where(eb =>
+            {
+                int kpmgTimeIdFrom = Convert.ToInt32(eb.GetAttributeValue<AliasedValue>($"{Fromalias}.kpmg_timeid").Value);
+                int kpmgTimeIdTo = Convert.ToInt32(eb.GetAttributeValue<AliasedValue>($"{Toalias}.kpmg_timeid").Value);
+
+                // Check if the time slots overlap for both start and end times
+                bool overlaps = kpmgTimeIdFrom <= to && kpmgTimeIdTo >= from;
+
+                return overlaps;
+            }).ToList();
+           
+            if (exbook.Count > 0)
             {
                 throw new InvalidPluginExecutionException("A booking already exists for this room at the specified date and time.");
             }

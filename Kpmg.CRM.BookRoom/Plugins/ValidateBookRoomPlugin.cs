@@ -33,18 +33,17 @@ namespace Kpmg.CRM.BookRoom.Plugins
                 try
                 {
                     var roomId = entityBookRoom.GetAttributeValue<EntityReference>("kpmg_room"); 
-                    var bookingDate = entityBookRoom.GetAttributeValue<DateTime>("kpmg_bookingday"); 
-                    var timeSlot = entityBookRoom.GetAttributeValue<EntityReference>("kpmg_predefinedtimeslots");
+                    var bookingDate = entityBookRoom.GetAttributeValue<DateTime>("kpmg_bookedzonedependent"); 
                     if(service == null)
                     {
                         throw new InvalidPluginExecutionException("service is null");
                     }
-                    new BookRoomClass(service).validateifBookedExistBefore(service,bookingDate,roomId,timeSlot);
+                    new BookRoomClass(service).validateifBookedExistBefore(service,bookingDate,roomId,entityBookRoom);
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
                 {
-                    throw new InvalidPluginExecutionException("An error occurred in book room.", ex);
+                    throw new InvalidPluginExecutionException("An error occurred in book room."+ ex.Message);
                 }
 
                 catch (Exception ex)

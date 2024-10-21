@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="CustomActions\GetAvailableRoomsCustomAction.cs" />
     <Compile Include="Plugins\ValidateBookRoomPlugin.cs" />
+    <Compile Include="Plugins\ValidateBuildingCreation.cs" />
     <Compile Include="Plugins\ValidateRoomCreation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
