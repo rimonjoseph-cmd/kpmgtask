@@ -1,11 +1,13 @@
 ﻿using KPMG.CRM.Business.TimeSlot.BLL;
 using KPMG.CRM.Business.TimeSlot.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace KPMG.CRM.Integration.API.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TimeSlotController : ControllerBase
@@ -16,7 +18,8 @@ namespace KPMG.CRM.Integration.API.Controllers
         {
             this.timeSlotBLL = timeSlotBLL;
         }
-        // GET: api/<TimeSlotController>
+
+       [Authorize(Policy = "RequireAdminRole")]
         [HttpGet]
         public async Task<IEnumerable<TimeSlotDTO>> Get()
         {

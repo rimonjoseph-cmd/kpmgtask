@@ -7,16 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Building\DTo\**" />
+    <EmbeddedResource Remove="Building\DTo\**" />
+    <None Remove="Building\DTo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.1.32" />
     <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client.Dynamics" Version="1.1.32" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KPMG.CRM.DAL\KPMG.CRM.DAL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Building\DTo\" />
   </ItemGroup>
 
 </Project>

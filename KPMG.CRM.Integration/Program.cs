@@ -3,6 +3,10 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using KPMG.CRM.Business.Room.BLL;
 using KPMG.CRM.Business.TimeSlot.BLL;
+using KPMG.CRM.Business.Contact;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +27,33 @@ builder.Services.AddCors(options =>
                           .AllowAnyHeader();
                       });
 });
+#region jwt
+//Jwt configuration starts here
+var jwtIssuer = builder.Configuration.GetSection("Jwt:Issuer").Get<string>();
+var jwtKey = builder.Configuration.GetSection("Jwt:Key").Get<string>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+ .AddJwtBearer(options =>
+ {
+     options.TokenValidationParameters = new TokenValidationParameters
+     {
+         ValidateIssuer = true,
+         ValidateAudience = true,
+         ValidateLifetime = true,
+         ValidateIssuerSigningKey = true,
+         ValidIssuer = jwtIssuer,
+         ValidAudience = jwtIssuer,
+         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+     };
+ });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
+    options.AddPolicy("RequireEmployeeRole", policy => policy.RequireRole("employee"));
+    options.AddPolicy("RequireCleanStuffRole", policy => policy.RequireRole("cleanstuff"));
+});
+#endregion jwt
 #region dependency injection
 builder.Services.AddSingleton<IOrganizationServiceAsync>(serviceProvider =>
 {
@@ -31,6 +62,8 @@ builder.Services.AddSingleton<IOrganizationServiceAsync>(serviceProvider =>
 builder.Services.AddScoped<IBuildingBLL,BuildingBLL>();
 builder.Services.AddScoped<IRoomBLL,RoomBLL>();
 builder.Services.AddScoped<ITimeSlotBLL, TimeSlotBLL>();
+builder.Services.AddScoped<IContactBLL, ContactBLL>();
+
 #endregion 
 
 
@@ -45,6 +78,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
