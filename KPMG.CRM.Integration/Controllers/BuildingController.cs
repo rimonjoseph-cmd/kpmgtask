@@ -1,5 +1,7 @@
 ﻿using KPMG.CRM.Business.Building;
+using KPMG.CRM.Business.Models;
 using KPMG.CRM.Business.Room.BLL;
+using KPMG.CRM.Integration.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Xrm.Sdk;
 
@@ -19,29 +21,48 @@ namespace KPMG.CRM.Integration.Controllers
         }
         // GET: api/<BuildingController>
         [HttpGet]
-        public async Task<EntityCollection> Get()
+        public async Task<BaseResponse<List<BuildingModel>>> Get()
         {
-            return await this.buildingBLL.getall();
+            return new BaseResponse<List<BuildingModel>>()
+            {
+                data = await this.buildingBLL.getall(),
+                result = true,
+                message = "Success"
+            };
         }
 
         // GET api/<BuildingController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<BaseResponse<BuildingModel>> Get(string id)
         {
-            return "value";
+            return new BaseResponse<BuildingModel>()
+            {
+                data = await this.buildingBLL.get(id),
+                result = true,
+                message = "Success"
+            };
         }
 
         // POST api/<BuildingController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<BaseResponse<BuildingModel>> Post([FromBody] BuildingModel value)
         {
+
+            return new BaseResponse<BuildingModel>()
+            {
+                data = await this.buildingBLL.createBuilding(value),
+                result = true,
+                message = "Success"
+            };
         }
+
         // POST api/<BuildingController>
         [HttpPost("block/{buildingid}")]
         public string blockBuilding(Guid buildingid)
         {
             return this.buildingBLL.Block(buildingid) ? "building blocked successfully" : "no action taken";
         }
+
         // POST api/<BuildingController>
         [HttpPost("unblock/{buildingid}")]
         public string unblockBuilding(Guid buildingid)
@@ -51,8 +72,14 @@ namespace KPMG.CRM.Integration.Controllers
 
         // PUT api/<BuildingController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<BaseResponse<BuildingModel>> Put(string id, [FromBody] BuildingModel value)
         {
+            return new BaseResponse<BuildingModel>()
+            {
+                data = await this.buildingBLL.updateBuilding(id, value),
+                result = true,
+                message = "Success update Building"
+            };
         }
 
         // DELETE api/<BuildingController>/5

@@ -16,10 +16,4 @@
     <ProjectReference Include="..\KPMG.CRM.Business\KPMG.CRM.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.Xrm.Tooling.Connector">
-      <HintPath>..\debug\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

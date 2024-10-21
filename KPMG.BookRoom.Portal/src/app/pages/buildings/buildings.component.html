@@ -1,0 +1,84 @@
+<p>buildings works!</p>
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-success">
+                        Buildings
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>name</th>
+                            <th>code</th>
+                            <th>isActive</th>
+                            <th>isblocked</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="isLoader == false">
+                        <tr *ngFor="let building of buildingsList; let bi=index">
+                            <td>{{bi}}</td>
+                            <td>{{building.name}}</td>
+                            <td>{{building.code}}</td>
+                            <td>{{building.isactive}}</td>
+                            <td>{{building.isblocked}}</td>
+                            <td class="text-center">
+                                <button class="btn btn-success btn-sm" (click)="editBuilding(building.id)">Edit</button>
+                                <!-- <button class="btn btn-danger btn-sm" (click)="DeleteBuilding(building.id)">D</button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="isLoader == true">
+                        <tr>
+                            <td colspan="6" >
+                                <div class="d-flex align-items-center">
+                                    <strong>Loading...</strong>
+                                    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                                  </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header bg-success">
+               Create Buildings
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Building Name</label>
+                            <input type="text" class="form-control" name="name" [(ngModel)]="createBuidlingobj.name" placeholder="Enter">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Building Code</label>
+                            <input type="text" class="form-control" name="code" [(ngModel)]="createBuidlingobj.code" placeholder="Enter">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Is Active</label>
+                            <input type="checkbox" name="isactive" [(ngModel)]="createBuidlingobj.isactive">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <button class="btn btn-sm btn-secondry">Reset</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-sm btn-secondry" *ngIf="createBuidlingobj.id == ''" (click)="createBuilding()">
+                                <span *ngIf="isLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Save</button>
+                            <button class="btn btn-sm btn-secondry" *ngIf="createBuidlingobj.id !== ''" (click)="updateBuilding()">
+                                <span *ngIf="isLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
