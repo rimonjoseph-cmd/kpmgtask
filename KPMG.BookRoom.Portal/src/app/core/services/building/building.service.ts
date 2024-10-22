@@ -6,6 +6,7 @@ import { links } from '../environmentconfig';
   providedIn: 'root'
 })
 export class BuildingService {
+  constructor(private http: HttpClient) { }
   updateBuilding(createBuidlingobj: any) {
     return this.http.put(links.createbuilding +"/" + createBuidlingobj.id,createBuidlingobj);
   }
@@ -13,11 +14,11 @@ export class BuildingService {
     return this.http.get(links.getallbuilding+"/" +id);
   }
 
-  constructor(private http: HttpClient) { }
+
   getAllBuildings(){
     return this.http.get(links.getallbuilding);
   }
   createBuilding(obj:any){
-    return this.http.post(links.createbuilding,obj)
+    return this.http.post(links.createbuilding,obj);
   }
 }

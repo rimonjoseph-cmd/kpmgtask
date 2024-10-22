@@ -9,6 +9,7 @@ using System.Text;
 using System.Security.Claims;
 using ClaimTypes = System.Security.Claims.ClaimTypes;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using KPMG.CRM.Integration.API.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,15 +28,23 @@ namespace KPMG.CRM.Integration.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
+            ContactModel getContactCRM = await this._contactBLL.checklogin(loginRequest.username, loginRequest.password);
+            if(getContactCRM == null)
+            {
+                Unauthorized(new BaseResponse<string>()
+                {
+                    result = false,
+                    message = "unauthorized",
+                    data = ""
+                });
+            }
 
             var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, loginRequest.username),
-                     new Claim(ClaimTypes.Role, "admin"),
-                     new Claim(ClaimTypes.Role, "employee"),
-                     new Claim(ClaimTypes.Role, "cleanStuff")
+                    new Claim(ClaimTypes.Role, getContactCRM.role)
                 };
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -54,7 +63,12 @@ namespace KPMG.CRM.Integration.Controllers
             var token = jwtTokenHandler.CreateToken(tokenDescriptor);
             var tokenString = jwtTokenHandler.WriteToken(token);
 
-            return Ok(tokenString);
+            return Ok(new BaseResponse<string>()
+            {
+                result = true,
+                message = "login successfully",
+                data = tokenString
+            });
         }
         // GET: api/<ContactController>
         [HttpGet]
@@ -72,9 +86,14 @@ namespace KPMG.CRM.Integration.Controllers
 
         // POST api/<ContactController>
         [HttpPost]
-        public async Task<ContactModel> Post([FromBody] ContactModel createContact)
+        public async Task<BaseResponse<ContactModel>> Post([FromBody] ContactModel createContact)
         {
-            return await this._contactBLL.createContact(createContact);
+            return new BaseResponse<ContactModel>()
+            {
+                result = true,
+                message = "Contact Registered Successfully",
+                data = await this._contactBLL.createContact(createContact)
+            };
         }
 
         // PUT api/<ContactController>/5

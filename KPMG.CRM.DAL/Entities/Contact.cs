@@ -502,6 +502,7 @@ namespace KPMG.CRM.DAL
 		public partial class Fields
 		{
 			public const string AccountId = "accountid";
+			public const string contactrole = "kpmg_contactrole";
 			public const string AccountIdName = "accountidname";
 			public const string AccountIdYomiName = "accountidyominame";
 			public const string AccountRoleCode = "accountrolecode";

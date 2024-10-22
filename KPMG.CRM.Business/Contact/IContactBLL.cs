@@ -10,5 +10,6 @@ namespace KPMG.CRM.Business.Contact
     public interface IContactBLL
     {
         Task<ContactModel> createContact(ContactModel createContact);
+        Task<ContactModel> checklogin(string username, string password);
     }
 }

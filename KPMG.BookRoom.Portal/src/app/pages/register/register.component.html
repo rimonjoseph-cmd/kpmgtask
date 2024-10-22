@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <form method="POST" action="#" role="form">
+                    <div class="form-group">
+                        <h2>Create account</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="username">Username</label>
+                        <input id="signupName" name="username" [(ngModel)]="registeredContact.username" type="text" maxlength="50" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="signupEmail">Email</label>
+                        <input id="signupEmail"  name="email" [(ngModel)]="registeredContact.email" type="email" maxlength="50" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="signupPassword">Password</label>
+                        <input id="signupPassword" type="password" name="password" [(ngModel)]="registeredContact.password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="signupPasswordagain">Password again</label>
+                        <input id="signupPasswordagain" type="password" maxlength="25" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button id="signupSubmit" type="submit" class="btn btn-info btn-block" (click)="register()">Create your account</button>
+                    </div>
+                    <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
+                    <hr>
+                    <p>Already have an account? <a routerLink="/">login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

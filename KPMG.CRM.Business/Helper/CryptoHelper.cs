@@ -12,6 +12,15 @@ namespace KPMG.CRM.Business.Helper
 
     public class CryptoHelper
     {
+
+        public static string ComputeHash(string input, string key)
+        {
+            using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key)))
+            {
+                byte[] hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(input));
+                return BitConverter.ToString(hashValue).Replace("-", "").ToLower();
+            }
+        }
         public static string EncryptData(string text, string key)
         {
             using (Aes aesAlg = Aes.Create())
@@ -37,30 +46,6 @@ namespace KPMG.CRM.Business.Helper
             }
         }
 
-        public static string DecryptData(string encryptedText, string key)
-        {
-            byte[] encryptedData = Convert.FromBase64String(encryptedText);
-
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Encoding.UTF8.GetBytes(key);
-                aesAlg.IV = new byte[16]; // IV should be the same as used for encryption
-
-                using (var decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV))
-                {
-                    using (var msDecrypt = new System.IO.MemoryStream(encryptedData))
-                    {
-                        using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                        {
-                            using (var srDecrypt = new System.IO.StreamReader(csDecrypt))
-                            {
-                                return srDecrypt.ReadToEnd();
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 
 }

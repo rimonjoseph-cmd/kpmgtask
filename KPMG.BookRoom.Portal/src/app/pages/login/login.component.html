@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <form method="POST" action="#" role="form">
+                    <div class="form-group">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="signupName">Your name</label>
+                        <input id="signupName" type="text" name="password" [(ngModel)]="loginContact.username" maxlength="50" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="signupPassword">Password</label>
+                        <input id="signupPassword" name="password" [(ngModel)]="loginContact.password" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40">
+                    </div>
+                    
+                    <div class="form-group">
+                        <button id="signupSubmit" (click)="login()" type="submit" class="btn btn-info btn-block">Login</button>
+                    </div>
+                    <hr>
+                    <p>Not Register Yet? <a routerLink="/signup">signup</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersComponent } from './pages/users/users.component';
 import { BuildingsComponent } from './pages/buildings/buildings.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { IsAuthenticatedGuard } from './guards/is-authenticated.guard';
+import { HasroleGuard } from './guards/hasrole.guard';
 
 const routes: Routes = [
   {
-    path : "users",
-    component: UsersComponent
+    path : "buildings",
+    component: BuildingsComponent,
+    canActivate : [IsAuthenticatedGuard,HasroleGuard],
+    data: {
+      role: ['admin','employee']
+    }
   },
   {
-    path : "buildings",
-    component: BuildingsComponent
+    path : "login",
+    component: LoginComponent
+  }
+  ,
+  {
+    path : "signup",
+    component: RegisterComponent
   }
 ];
 

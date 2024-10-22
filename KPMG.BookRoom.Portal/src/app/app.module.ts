@@ -3,15 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './pages/users/users.component';
 import { BuildingsComponent } from './pages/buildings/buildings.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AuthInterceptorProvider } from './Interceptors/auth.interceptor';
+import { HasRoleDirective } from './directive/has-role.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    BuildingsComponent
+    BuildingsComponent,
+    LoginComponent,
+    RegisterComponent,
+    HasRoleDirective,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
