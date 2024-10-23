@@ -7,5 +7,6 @@ namespace KPMG.CRM.Business.Room.BLL
     {
         Task<Guid> createRoom(CreateRoomInputDTO createRoomInput);
         Task<List<RoomModel>> getAvailable(DateTime dateInput);
+        Task<RoomModel> getRoom(string id);
     }
 }

@@ -56,6 +56,7 @@ namespace KPMG.CRM.DAL
 		{
 			public const string Business_Unit_KPMg_BookRoom = "business_unit_kpmg_bookroom";
 			public const string CreatedBy = "createdby";
+			public const string title = "kpmg_title";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
 			public const string CreatedOn = "createdon";

@@ -44,6 +44,7 @@ namespace KPMG.CRM.Integration.Controllers
             var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, loginRequest.username),
+                    new Claim("contactid", getContactCRM.id.ToString() ),
                     new Claim(ClaimTypes.Role, getContactCRM.role)
                 };
 

@@ -1,0 +1,38 @@
+<div class="container col-2 col-10">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2>All Rooms</h2> <!-- Add a header above the table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">name</th>
+                        <th scope="col">code</th>
+                        <th scope="col">Active Status</th>
+                        <th scope="col">Building</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="isLoader == false">
+                    <tr *ngFor="let roomitem of allRooms; let bi=index">
+                        <td>{{bi+1}}</td>
+                        <td>{{roomitem.name}}</td>
+                        <td>{{roomitem.code}}</td>
+                        <td>{{roomitem.isactive}}</td>
+                        <td>{{roomitem.building.name}}</td>
+                    </tr>
+                </tbody>
+
+                <tbody *ngIf="isLoader == true">
+                    <tr>
+                        <td colspan="6" >
+                            <div class="d-flex align-items-center">
+                                <strong>Loading...</strong>
+                                <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                              </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

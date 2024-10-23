@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'KPMG.BookRoom.Portal';
-  constructor(private authicateService : AuthenticationService, private route: Router){}
+
+  isLoggedIn = false;
+  constructor(private authicateService : AuthenticationService, private route: Router){
+     this.authicateService.isLoggedIn$.subscribe((isLoggedIn: boolean) => {
+      this.isLoggedIn = isLoggedIn;
+    });
+  }
 
   onLogout() {
     localStorage.removeItem('token');

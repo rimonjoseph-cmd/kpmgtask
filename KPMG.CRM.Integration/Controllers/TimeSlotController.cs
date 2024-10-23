@@ -1,5 +1,6 @@
 ﻿using KPMG.CRM.Business.TimeSlot.BLL;
 using KPMG.CRM.Business.TimeSlot.DTO;
+using KPMG.CRM.Integration.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,11 +20,17 @@ namespace KPMG.CRM.Integration.API.Controllers
             this.timeSlotBLL = timeSlotBLL;
         }
 
-       [Authorize(Policy = "RequireAdminRole")]
+        //[Authorize(Policy = "RequireAdminRole,RequireEmployeeRole")]
+       // [Authorize(Policy = "RequireEmployeeRole")]
         [HttpGet]
-        public async Task<IEnumerable<TimeSlotDTO>> Get()
+        public async Task<BaseResponse<IEnumerable<TimeSlotDTO>>> Get()
         {
-            return await this.timeSlotBLL.getAll();
+            return new BaseResponse<IEnumerable<TimeSlotDTO>>()
+            {
+                result = true,
+                message = "timeslot retrived successfully",
+                data = await this.timeSlotBLL.getAll()
+            };
         }
 
         // GET api/<TimeSlotController>/5

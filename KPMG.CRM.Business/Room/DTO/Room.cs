@@ -13,7 +13,7 @@ namespace KPMG.CRM.Business.Room.DTO
         public Guid id { get; set; }
         public string name { get; set; }
         public string code { get; set; }
-        public bool isActive { get; set; } // is blocked or not
+        public bool isactive { get; set; } // is blocked or not
         public BuildingModel building { get; set; } 
         public List<TimeSlotDTO> timeSlotAvailable { get; set; }
     }

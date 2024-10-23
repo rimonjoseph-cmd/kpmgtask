@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group mb-3">
+                    <label>Title:</label>
+                    <input type="text" class="form-control" [(ngModel)]="bookingData.title" name="title">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Booked Date:</label>
+                    <input type="datetime-local" class="form-control" [(ngModel)]="bookingData.bookedDate" name="bookedDate" (change)="onBookedDateChange()" [min]="getCurrentDateTime()">
+                </div>
+                <div *ngIf="isLoader == true">
+                    <tr>
+                        <td colspan="6" >
+                            <div class="d-flex align-items-center">
+                                <strong>Loading...</strong>
+                                <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                              </div>
+                        </td>
+                    </tr>
+                </div>
+                <div *ngIf="isLoader == false">
+                    <div class="form-group mb-3">
+                        <label>Room ID:</label>
+                        <select class="form-control" [(ngModel)]="bookingData.roomid" name="roomid">
+                            <option value="">Select Room ID</option>
+                            <option *ngFor="let room of roomModels" [value]="room.id">{{ room.name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>From ID:</label>
+                        <select class="form-control" [(ngModel)]="bookingData.fromid" name="fromid" (change)="checkFromId()">
+                            <option value="">Select From </option>
+                            <option *ngFor="let timeslot of timeslotsModel" [value]="timeslot.timeslotid">{{ timeslot.time }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3" *ngIf="showToId">
+                        <label>To ID:</label>
+                        <select class="form-control" [(ngModel)]="bookingData.toid" name="toid">
+                            <option value="">Select To ID</option>
+                            <option *ngFor="let timeslot of timeslotsModelTO" [value]="timeslot.timeslotid">{{ timeslot.time }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3"></div> <!-- Add margin between elements using Bootstrap's margin utility class -->
+                <button type="submit" (click)="onsubmit()" class="btn btn-primary">Submit</button>
+                <div class="mb-3"></div> <!-- Add margin between elements using Bootstrap's margin utility class -->
+            
+            </form>
+        </div>
+    </div>
+</div>

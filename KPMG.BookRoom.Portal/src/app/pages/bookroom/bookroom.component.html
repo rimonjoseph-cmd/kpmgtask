@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-success">
+                        My Books
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>name</th>
+                            <th>Booked Date</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Requester</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="isLoader == false">
+                        <tr *ngFor="let bookroomitem of myBookroomsList; let bi=index">
+                            <td>{{bi+1}}</td>
+                            <td>{{bookroomitem.name}}</td>
+                            <td>{{bookroomitem.bookedDate}}</td>
+                            <td>{{bookroomitem.from}}</td>
+                            <td>{{bookroomitem.to}}</td>
+                            <td class="text-center">
+                                <!-- <button class="btn btn-success btn-sm" (click)="view(bookroomitem.id)">Edit</button> -->
+                                <!-- <button class="btn btn-danger btn-sm" (click)="DeleteBuilding(building.id)">D</button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="isLoader == true">
+                        <tr>
+                            <td colspan="6" >
+                                <div class="d-flex align-items-center">
+                                    <strong>Loading...</strong>
+                                    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                                  </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,10 @@
         <ul>
             <li class="nav-item"><a class="nav-link" routerLink="users">users</a></li>
             <li class="nav-item"><a class="nav-link" *appHasRole="'employee'" routerLink="buildings">Buildings</a></li>
+            <li class="nav-item"><a class="nav-link" *appHasRole="'employee'" routerLink="mybooks">My Books</a></li>
+            <li class="nav-item"><a class="nav-link" *appHasRole="'employee'" routerLink="availablerooms">Available Rooms</a></li>
+<li class="nav-item"><a class="nav-link" *appHasRole="'employee'" routerLink="createroom">Create New Book</a></li>
+            
             
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -30,7 +34,8 @@
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><button type="button" (click)="onLogout()" class="btn">logout</button></li>
+          <li><button type="button" (click)="onLogout()" *ngIf="isLoggedIn" class="btn">logout</button></li>
+          <li class="nav-item"><a class="nav-link" *ngIf="!isLoggedIn" routerLink="login">My Books</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

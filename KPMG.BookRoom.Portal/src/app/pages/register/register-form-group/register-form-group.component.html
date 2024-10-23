@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                      <h2>Create account</h2>
+                  </div>
+                  <div class="form-group">
+                    <label for="userType">User Type:</label>
+                    <select formControlName="userType"  class="form-control">
+                      <option *ngFor="let type of userTypes" [value]="type">{{ type }}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="username">Username</label>
+                    <input formControlName="username" type="text" maxlength="50" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <input formControlName="email" type="email" maxlength="50" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="gender">Gender</label>
+                    <select formControlName="gender" class="form-control">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Other</option>
+                    </select>
+                </div>
+                  <div class="form-group">
+                    <label class="control-label" for="password">Password</label>
+                    <input formControlName="password" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label" for="passwordConfirm">Password again</label>
+                    <input formControlName="passwordConfirm" type="password" maxlength="25" class="form-control">
+                  </div>
+                  
+                  
+                  <div formGroupName="adminDetails" *ngIf="registrationForm.get('userType')?.value === 'Administration'">
+                      <div class="form-group">
+                        <label class="control-label" for="department">Department</label>
+
+                        <input  class="form-control" formControlName="department" type="text" placeholder="Department">
+                      </div>
+                   
+
+                    <div class="form-group">
+                        <label class="control-label" for="officeLocation">Office Location</label>
+                        <input formControlName="officeLocation" type="text" placeholder="Office Location" class="form-control">
+                    </div>
+                   
+                    </div>
+                  
+                    <div formGroupName="employeeDetails" *ngIf="registrationForm.get('userType')?.value === 'Employee'">
+                        <div class="form-group">
+                            <label class="control-label" for="jobTitle">Job Title</label>
+                            <input formControlName="jobTitle" type="text" placeholder="Job Title" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="dateOfJoining">Date of Joining</label>
+                            <input formControlName="dateOfJoining" type="text" placeholder="Date of Joining" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="employeeId">Employee ID</label>
+                            <input formControlName="employeeId" type="text" placeholder="Employee ID" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="emergencyContact">Emergency Contact</label>
+                            <input formControlName="emergencyContact" type="text" placeholder="Emergency Contact" class="form-control">
+                        </div>
+                    </div>
+                  
+                    <div formGroupName="cleaningStaffDetails" *ngIf="registrationForm.get('userType')?.value === 'CleaningStaff'">
+                        <div class="form-group">
+                            <label class="control-label" for="areaAssigned">Area Assigned</label>
+                            <input formControlName="areaAssigned" type="text" placeholder="Area Assigned" class="form-control">
+                        </div>
+                      
+                    </div>
+                    <div class="form-group">
+                        <button type="submit"  [disabled]="registrationForm.invalid" class="btn btn-info btn-block">Create your account</button>
+                    </div>
+                    <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
+                    <hr>
+                    <p>Already have an account? <a routerLink="/">Login</a></p>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,7 +12,8 @@ export class AuthenticationService {
     this.user = {
       firstname : '',
       role: '',
-      unique_name: ''
+      unique_name: '',
+      contactid: ''
     };
     this._isLoggedIn$.next(false);
     localStorage.removeItem(this.TOKEN_NAME);
@@ -47,7 +48,8 @@ private getUser(token : string) : UserModel{
     return {
       firstname : '',
       role: '',
-      unique_name: ''
+      unique_name: '',
+      contactid: ''
     };
   }
   debugger;

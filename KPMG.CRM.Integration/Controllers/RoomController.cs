@@ -1,5 +1,7 @@
 ﻿using KPMG.CRM.Business.Room.BLL;
 using KPMG.CRM.Business.Room.DTO;
+using KPMG.CRM.Integration.API.Extensions;
+using KPMG.CRM.Integration.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,21 +24,29 @@ namespace KPMG.CRM.Integration.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-       
+
         [HttpGet("getavailable")]
-        public async Task<List<RoomModel>> GetAvailable(string bookedDate)
+        public async Task<BaseResponse<List<RoomModel>>> GetAvailable(string bookedDate)
         {
-            // Convert the string to a DateTime object using DateTime.ParseExact
-            DateTime dateTime;
-            DateTime.TryParseExact(bookedDate, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out dateTime);
-            return await this.roomBLL.getAvailable(dateTime);
+            DateTime dateTime = DateTime.Parse(bookedDate);// bookedDate.ConvertToUtcDateTime();
+            return new BaseResponse<List<RoomModel>>()
+            {
+                message = "success retrieve",
+                result = true,
+                data = await this.roomBLL.getAvailable(dateTime)
+            };
         }
 
         // GET api/<RoomController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<BaseResponse<RoomModel>> Get(string id)
         {
-            return "value";
+            return new BaseResponse<RoomModel>()
+            {
+                data = await this.roomBLL.getRoom(id),
+                message = "success",
+                result = true
+            };
         }
 
         // POST api/<RoomController>

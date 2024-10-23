@@ -26,25 +26,25 @@ namespace KPMG.CRM.Business.TimeSlot.BLL
             // Simulated TimeData object with multiple entries
             List< TimeSlotDTO> timeData = new List<TimeSlotDTO>
             {
-                 new TimeSlotDTO { TimeId = 17, Time = "8:00AM" },
-                new TimeSlotDTO { TimeId = 18, Time =  "8:30AM" },
-                new TimeSlotDTO { TimeId = 19, Time =  "9:00AM" },
-                new TimeSlotDTO { TimeId = 20, Time =  "9:30AM" },
-                new TimeSlotDTO { TimeId = 21, Time =  "10:00AM" },
-                new TimeSlotDTO { TimeId = 22, Time =  "10:30AM" },
-                new TimeSlotDTO { TimeId = 23, Time =  "11:00AM" },
-                new TimeSlotDTO { TimeId = 24, Time =  "11:30AM" },
-                new TimeSlotDTO { TimeId = 25, Time =  "12:00PM" },
-                new TimeSlotDTO { TimeId = 26, Time =  "12:30PM" },
-                new TimeSlotDTO { TimeId = 27, Time =  "1:00PM" },
-                new TimeSlotDTO { TimeId = 28, Time =  "1:30PM" },
-                new TimeSlotDTO { TimeId = 29, Time =  "2:00PM" },
-                new TimeSlotDTO { TimeId = 30, Time =  "2:30PM" },
-                new TimeSlotDTO { TimeId = 31, Time =  "3:00PM" },
-                new TimeSlotDTO { TimeId = 32, Time =  "3:30PM" },
-                new TimeSlotDTO { TimeId = 33, Time =  "4:00PM" },
-                new TimeSlotDTO { TimeId = 34, Time =  "4:30PM" },
-                new TimeSlotDTO { TimeId = 35, Time =  "5:00PM" }
+                 new TimeSlotDTO {timeid = 17,time = "8:00AM" },
+                new TimeSlotDTO { timeid = 18, time =  "8:30AM" },
+                new TimeSlotDTO { timeid = 19, time =  "9:00AM" },
+                new TimeSlotDTO { timeid = 20, time =  "9:30AM" },
+                new TimeSlotDTO { timeid = 21, time =  "10:00AM" },
+                new TimeSlotDTO { timeid = 22, time =  "10:30AM" },
+                new TimeSlotDTO { timeid = 23, time =  "11:00AM" },
+                new TimeSlotDTO { timeid = 24, time =  "11:30AM" },
+                new TimeSlotDTO { timeid = 25, time =  "12:00PM" },
+                new TimeSlotDTO { timeid = 26, time =  "12:30PM" },
+                new TimeSlotDTO { timeid = 27, time =  "1:00PM" },
+                new TimeSlotDTO { timeid = 28, time =  "1:30PM" },
+                new TimeSlotDTO { timeid = 29, time =  "2:00PM" },
+                new TimeSlotDTO { timeid = 30, time =  "2:30PM" },
+                new TimeSlotDTO { timeid = 31, time =  "3:00PM" },
+                new TimeSlotDTO { timeid = 32, time =  "3:30PM" },
+                new TimeSlotDTO { timeid = 33, time =  "4:00PM" },
+                new TimeSlotDTO { timeid = 34, time =  "4:30PM" },
+                new TimeSlotDTO { timeid = 35, time =  "5:00PM" }
             };
            
             ExecuteMultipleRequest request = new ExecuteMultipleRequest()
@@ -60,8 +60,8 @@ namespace KPMG.CRM.Business.TimeSlot.BLL
             foreach (var timeSlot in timeData)
             {
                 Entity timeSlotEntity = new Entity("kpmg_predefinedtimeslots");
-                timeSlotEntity["kpmg_timeid"] = timeSlot.TimeId;
-                timeSlotEntity["kpmg_name"]   = timeSlot.Time;
+                timeSlotEntity["kpmg_timeid"] = timeSlot.timeid;
+                timeSlotEntity["kpmg_name"]   = timeSlot.time;
 
                 CreateRequest createRequest = new CreateRequest { Target = timeSlotEntity };
                 request.Requests.Add(createRequest);
@@ -87,9 +87,9 @@ namespace KPMG.CRM.Business.TimeSlot.BLL
                 {
                     TimeSlotDTO timeSlotDTO = new TimeSlotDTO
                     {
-                        Time = entity.GetAttributeValue<string>("kpmg_name"),
-                        TimeId = entity.GetAttributeValue<int>("kpmg_timeid"),
-                        timeSlotID = entity.Id
+                        time = entity.GetAttributeValue<string>("kpmg_name"),
+                        timeid = entity.GetAttributeValue<int>("kpmg_timeid"),
+                        timeslotid = entity.Id
                     };
                     timeSlotDTOs.Add(timeSlotDTO);
                 }

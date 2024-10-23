@@ -8,9 +8,9 @@ namespace KPMG.CRM.Business.TimeSlot.DTO
 {
     public class TimeSlotDTO
     {
-        public int TimeId { get; set; }
-        public string Time { get; set; }
-        public Guid timeSlotID { get; set; }
+        public int timeid { get; set; }
+        public string time { get; set; }
+        public Guid timeslotid { get; set; }
     }
 
 }

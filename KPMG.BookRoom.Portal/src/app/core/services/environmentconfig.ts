@@ -5,5 +5,15 @@ export const  links = {
     "contact": {
         "registernew" : mainUrl + "contact",
         "login" : mainUrl + "contact"+ "/login"
+    },
+    "bookrooms": {
+        "mybookroooms" : mainUrl + "book/own",
+        "createbook" : mainUrl + "book"
+    },
+    "rooms": {
+        "availableRooms" : mainUrl + "room/getavailable"
+    },
+    "timeslots": {
+        "getall" : mainUrl + "TimeSlot"
     }
 };

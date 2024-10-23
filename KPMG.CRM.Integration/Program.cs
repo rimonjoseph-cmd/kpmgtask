@@ -7,6 +7,7 @@ using KPMG.CRM.Business.Contact;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using KPMG.CRM.Business.BookRoom;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,7 +64,7 @@ builder.Services.AddScoped<IBuildingBLL,BuildingBLL>();
 builder.Services.AddScoped<IRoomBLL,RoomBLL>();
 builder.Services.AddScoped<ITimeSlotBLL, TimeSlotBLL>();
 builder.Services.AddScoped<IContactBLL, ContactBLL>();
-
+builder.Services.AddScoped<IBookRoomBLL, BookRoomBLL>();
 #endregion 
 
 

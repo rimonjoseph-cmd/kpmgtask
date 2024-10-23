@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace KPMG.CRM.Business.Room.BLL
 {
@@ -33,6 +34,15 @@ namespace KPMG.CRM.Business.Room.BLL
             return await this.organizationService.CreateAsync(room);
         }
 
+        public LinkEntity getbuildingwithroomlink(string buildingalias)
+        {
+            LinkEntity buildingLink = new LinkEntity(KPMg_Room.EntityLogicalName, KPMg_Building.EntityLogicalName, KPMg_Room.Fields.KPMg_Building, KPMg_Building.PrimaryIdAttribute, JoinOperator.Inner);
+            buildingLink.Columns = new ColumnSet(KPMg_Building.Fields.KPMg_BuildingCode, KPMg_Building.Fields.StateCode, KPMg_Building.Fields.KPMg_Name);
+            buildingLink.EntityAlias = buildingalias;
+            // Add a condition to filter for active buildings (statecode = 0)
+            buildingLink.LinkCriteria.AddCondition(KPMg_Building.Fields.StateCode, ConditionOperator.Equal, (int)KPMg_Building_StateCode.Active);
+            return buildingLink;
+        }
         public async Task<List<RoomModel>> getAvailable(DateTime dateInput)
         {
             List<RoomModel> result = new List<RoomModel>();
@@ -44,15 +54,9 @@ namespace KPMG.CRM.Business.Room.BLL
             #region building check not blocked
             // Create a LinkEntity for the Building relationship
             string buildingalias = "building";
-            LinkEntity buildingLink = new LinkEntity(KPMg_Room.EntityLogicalName, KPMg_Building.EntityLogicalName, KPMg_Room.Fields.KPMg_Building, KPMg_Building.PrimaryIdAttribute, JoinOperator.Inner);
-            buildingLink.Columns = new ColumnSet(KPMg_Building.Fields.KPMg_BuildingCode, KPMg_Building.Fields.StateCode);
-            buildingLink.EntityAlias = buildingalias;
-            // Add a condition to filter for active buildings (statecode = 0)
-            buildingLink.LinkCriteria.AddCondition(KPMg_Building.Fields.StateCode, ConditionOperator.Equal, (int)KPMg_Building_StateCode.Active);
-
-            // Add the LinkEntity to the QueryExpression
-            roomsqueryExpression.LinkEntities.Add(buildingLink);
+            roomsqueryExpression.LinkEntities.Add(this.getbuildingwithroomlink(buildingalias));
             #endregion
+
             var rooms  =  await this.organizationService.RetrieveMultipleAsync(roomsqueryExpression);
             List<RoomModel> roomsModel = new List<RoomModel>();
             if (rooms != null && rooms?.Entities.Count > 0)
@@ -60,16 +64,19 @@ namespace KPMG.CRM.Business.Room.BLL
                
                 foreach (var roomEntity in rooms.Entities)
                 {
+                    string codebui = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_BuildingCode)?.Value.ToString();
+                    string namebui = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value.ToString();
+                            
                     roomsModel.Add(new RoomModel() {
                         id = roomEntity.Id,
                         code = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_RoomCode),
                         name = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_Name),
-                        isActive = true,
+                        isactive = true,
                         building = new Models.BuildingModel()
                         {
                             Id = roomEntity.GetAttributeValue<Guid>(KPMg_Room.Fields.Id).ToString(),
-                            code = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_BuildingCode)?.Value as string,
-                            name = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value as string,
+                            code = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_BuildingCode)?.Value.ToString(),
+                            name = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value.ToString(),
                             isactive = true
                         }
                     });
@@ -78,13 +85,13 @@ namespace KPMG.CRM.Business.Room.BLL
 
             #region get bookRoom available
             var timeslotArr = await this.timeSlotBLL.getAll();
-            TimeSlotDTO firsttimeslot = timeslotArr.OrderBy(n => n.TimeId).First();
-            TimeSlotDTO lasttimeslot = timeslotArr.OrderBy(n => n.TimeId).Last();
+            TimeSlotDTO firsttimeslot = timeslotArr.OrderBy(n => n.timeid).First();
+            TimeSlotDTO lasttimeslot = timeslotArr.OrderBy(n => n.timeid).Last();
             
             foreach (var roomitem in roomsModel) { 
                 Dictionary<int,bool> keyValuePairs = new Dictionary<int,bool>();
                 foreach (var timesl in timeslotArr) { 
-                    keyValuePairs.Add(timesl.TimeId, false);
+                    keyValuePairs.Add(timesl.timeid, false);
                 }
                 QueryExpression roomitemBookQuery = new QueryExpression(KPMg_BookRoom.EntityLogicalName);
                 roomitemBookQuery.ColumnSet = new ColumnSet(true);
@@ -110,7 +117,7 @@ namespace KPMG.CRM.Business.Room.BLL
                     int to = Convert.ToInt32(bookroomitem.GetAttributeValue<AliasedValue>($"{totimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId}")?.Value);
                     for (int i = from; i < to; i++)
                         keyValuePairs[i] = true ;
-                    if(to == lasttimeslot.TimeId)
+                    if(to == lasttimeslot.timeid)
                         keyValuePairs[to] = true ;
                 }
                 if (keyValuePairs.ContainsValue(false))
@@ -119,6 +126,33 @@ namespace KPMG.CRM.Business.Room.BLL
             #endregion
 
             return result;
+        }
+
+        public async Task<RoomModel> getRoom(string id)
+        {
+            QueryExpression roomsqueryExpression = new QueryExpression(KPMg_Room.EntityLogicalName);
+            roomsqueryExpression.ColumnSet = new ColumnSet(true);
+            roomsqueryExpression.Criteria.AddCondition(KPMg_Room.Fields.Id, ConditionOperator.Equal, id);
+
+            RoomModel response = new RoomModel();
+
+            var result = await this.organizationService.RetrieveMultipleAsync(roomsqueryExpression);
+            if(result != null)
+            {
+                if (result.Entities.Count > 0)
+                {
+                    var roomEntity = result.Entities[0];
+                    return new RoomModel()
+                    {
+                        id = roomEntity.Id,
+                        code = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_RoomCode),
+                        name = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_Name),
+                        isactive = true
+                    };
+                }
+            }
+            return response;
+
         }
     }
 }
