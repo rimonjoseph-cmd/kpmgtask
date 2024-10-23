@@ -11,5 +11,6 @@ namespace KPMG.CRM.Business.Contact
     {
         Task<ContactModel> createContact(ContactModel createContact);
         Task<ContactModel> checklogin(string username, string password);
+        Task<RegistrationContactTypeBased> RegisterContact(RegistrationContactTypeBased createContact);
     }
 }

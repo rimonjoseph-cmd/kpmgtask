@@ -20,8 +20,7 @@ namespace KPMG.CRM.Integration.API.Controllers
             this.timeSlotBLL = timeSlotBLL;
         }
 
-        //[Authorize(Policy = "RequireAdminRole,RequireEmployeeRole")]
-       // [Authorize(Policy = "RequireEmployeeRole")]
+        [Authorize(Policy = "RequiretimeslotRole")]
         [HttpGet]
         public async Task<BaseResponse<IEnumerable<TimeSlotDTO>>> Get()
         {

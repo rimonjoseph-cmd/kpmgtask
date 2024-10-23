@@ -96,7 +96,17 @@ namespace KPMG.CRM.Integration.Controllers
                 data = await this._contactBLL.createContact(createContact)
             };
         }
-
+        // POST api/<ContactController>
+        [HttpPost("register")]
+        public async Task<BaseResponse<RegistrationContactTypeBased>> register([FromBody] RegistrationContactTypeBased createContact)
+        {
+            return new BaseResponse<RegistrationContactTypeBased>()
+            {
+                result = true,
+                message = "Contact Registered Successfully",
+                data = await this._contactBLL.RegisterContact(createContact)
+            };
+        }
         // PUT api/<ContactController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)

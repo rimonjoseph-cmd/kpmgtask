@@ -53,6 +53,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
     options.AddPolicy("RequireEmployeeRole", policy => policy.RequireRole("employee"));
     options.AddPolicy("RequireCleanStuffRole", policy => policy.RequireRole("cleanstuff"));
+    options.AddPolicy("RequiretimeslotRole", policy => policy.RequireRole("cleanstuff", "admin", "employee"));
 });
 #endregion jwt
 #region dependency injection

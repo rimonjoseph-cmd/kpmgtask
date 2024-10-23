@@ -6,33 +6,43 @@ using System.Threading.Tasks;
 
 namespace KPMG.CRM.Business.Models
 {
+
+   public enum contactRoleEnum
+    {
+        admin = 0,
+        employee = 1,
+        cleaningstaff = 2
+    }
     public class AdminDetails
     {
-        public string Department { get; set; }//department
-        public string OfficeLocation { get; set; }//kpmg_officelocation
+        public string department { get; set; }//department
+        public string officeLocation { get; set; }//kpmg_officelocation
     }
 
     public class EmployeeDetails
     {
-        public string JobTitle { get; set; } //jobtitle 
-        public string DateOfJoining { get; set; } //kpmg_dateofjoining
-        public string EmployeeId { get; set; } //employeeid string
-        public string EmergencyContact { get; set; } //telephone1
+        public string jobTitle { get; set; } //jobtitle 
+        public string employeeId { get; set; } //employeeid string
+        public string emergencyContact { get; set; } //telephone1
     }
 
     public class CleaningStaffDetails
     {
-        public string AreaAssigned { get; set; }//kpmg_areaassigned
+        public string areaAssigned { get; set; }//kpmg_areaassigned
     }
 
     public class RegistrationContactTypeBased
     {
-        public string UserType { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Gender { get; set; }
-        public AdminDetails AdminDetails { get; set; }
-        public EmployeeDetails EmployeeDetails { get; set; }
-        public CleaningStaffDetails CleaningStaffDetails { get; set; }
+        public string id { get; set; }
+        public contactRoleEnum userType { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+        public string gender { get; set; }
+        public string? firstName { get; set; }
+        public string? username { get; set; }
+        public string? lastName { get; set; }
+        public AdminDetails adminDetails { get; set; }
+        public EmployeeDetails employeeDetails { get; set; }
+        public CleaningStaffDetails cleaningStaffDetails { get; set; }
     }
 }
