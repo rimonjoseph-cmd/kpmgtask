@@ -9,6 +9,8 @@ import { BookroomComponent } from './pages/bookroom/bookroom.component';
 import { AvailableRoomsComponent } from './pages/room/rooms/available-rooms/available-rooms.component';
 import { BookroomviewComponent } from './pages/bookroom/bookroomview/bookroomview.component';
 import { RegisterFormGroupComponent } from './pages/register/register-form-group/register-form-group.component';
+import { CleaningStaffDashboardComponent } from './pages/Dashboards/cleaning-staff-dashboard/cleaning-staff-dashboard.component';
+import { AllRoomsComponent } from './pages/room/all-rooms/all-rooms.component';
 
 const routes: Routes = [
   {
@@ -36,7 +38,7 @@ const routes: Routes = [
     }
   },
   {
-    path : "createroom",
+    path : "createbook",
     component: BookroomviewComponent,
     canActivate : [IsAuthenticatedGuard,HasroleGuard],
     data: {
@@ -46,16 +48,19 @@ const routes: Routes = [
   {
     path : "login",
     component: LoginComponent
-  }
-  ,
+  },
   {
     path : "signup",
-    component: RegisterComponent
+    component: RegisterFormGroupComponent
+  },
+  {
+    path : "mydashboard",
+    component: CleaningStaffDashboardComponent
   }
   ,
   {
-    path : "signup2",
-    component: RegisterFormGroupComponent
+    path : "rooms",
+    component: AllRoomsComponent
   }
 ];
 

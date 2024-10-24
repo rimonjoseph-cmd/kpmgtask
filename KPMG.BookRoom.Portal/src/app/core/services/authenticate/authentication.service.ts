@@ -11,7 +11,7 @@ export class AuthenticationService {
   logout()  {
     this.user = {
       firstname : '',
-      role: '',
+      role: [],
       unique_name: '',
       contactid: ''
     };
@@ -47,7 +47,7 @@ private getUser(token : string) : UserModel{
   if(token == '' || token == undefined){
     return {
       firstname : '',
-      role: '',
+      role: [],
       unique_name: '',
       contactid: ''
     };
@@ -55,12 +55,20 @@ private getUser(token : string) : UserModel{
   debugger;
   let v = JSON.parse(atob(token?.split('.')[1]));
   console.log(v);
-  let y =  v as UserModel;
+ 
+  let y : UserModel =  v as UserModel;
   console.log(y);
+  if (typeof v.role === 'string') {
+    y.role = [v.role]; // Convert the string to an array with one element
+}
 
-  return v as UserModel;
+  return y as UserModel;
 }
 hasRole(role:string) :boolean{
-  return this.user.role ==  role || false;
+  return this.user.role.includes(role) || false;
+}
+
+register(obj: any){
+  return this.http.post(links.contact.register,obj);
 }
 }

@@ -1,6 +1,11 @@
+<div *ngIf="isLoader" class="overlay">
+    <div class="spinner-border text-light spinner" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <div class="container col-2 col-10">
     <div class="row mt-4">
-        <div class="col-md-12">
+        <div class="col-7">
             <h2>All Rooms</h2> <!-- Add a header above the table -->
             <table class="table">
                 <thead>
@@ -33,6 +38,39 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header bg-success">
+                   Create Room
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="roomname">Room Name</label>
+                                <input type="text" class="form-control" name="name" [(ngModel)]="createUpdateRoomModel.name" placeholder="Enter">
+                            </div>
+                            <div class="col-6">
+                                <label for="roomcode">room Code</label>
+                                <input type="text" disabled="true" class="form-control" name="code" [(ngModel)]="createUpdateRoomModel.code" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <button class="btn btn-sm btn-secondry">Reset</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-sm btn-secondry" *ngIf="createUpdateRoomModel.id == ''" (click)="createRoom()">
+                                    <span *ngIf="isLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Save</button>
+                                <!-- <button class="btn btn-sm btn-secondry" *ngIf="createBuidlingobj.id !== ''" (click)="upda()">
+                                    <span *ngIf="isLoader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Update</button> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>

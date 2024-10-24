@@ -12,4 +12,8 @@ export class BookroomServiceService {
   getAllmybookrooms(){
     return this.http.get(links.bookrooms.mybookroooms);
   }
+  
+  getAllbookrooms(){
+    return this.http.get(links.bookrooms.allbooks);
+  }
 }

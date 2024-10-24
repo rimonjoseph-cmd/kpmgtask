@@ -5,6 +5,7 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,12 @@ namespace KPMG.CRM.Business.BookRoom
     public class BookRoomBLL : IBookRoomBLL
     {
         private readonly IOrganizationServiceAsync _service;
+        string fromtimeslot = "fromtimeslot";
+        string totimeslot = "totimeslot";
         public BookRoomBLL(IOrganizationServiceAsync organizationService)
         {
             _service = organizationService;
         }
-
 
         public async Task<bookroomresponse> createBookroom(CreateBookRoom obj)
         {
@@ -62,33 +64,34 @@ namespace KPMG.CRM.Business.BookRoom
             return bookroomresponse;
             
         }
-
-        public async Task<List<BookRoomModel>> getBookRoomsRelatedToContact(string contactid)
+        private QueryExpression getbookroomQueryExpression()
         {
-            List<BookRoomModel> bookRoomModels = new List<BookRoomModel>();
             QueryExpression queryExpression = new QueryExpression(KPMg_BookRoom.EntityLogicalName);
             queryExpression.ColumnSet = new ColumnSet(true);
+            // Add sorting by the "createdon" attribute in descending order
+            queryExpression.AddOrder(KPMg_BookRoom.Fields.CreatedOn, OrderType.Descending);
 
-            string fromtimeslot = "fromtimeslot";
             LinkEntity timeslotLinkFrom = new LinkEntity(KPMg_BookRoom.EntityLogicalName, KPMg_PredefinedTimeSlots.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_From, KPMg_PredefinedTimeSlots.PrimaryIdAttribute, JoinOperator.Inner);
             timeslotLinkFrom.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_Name);
             timeslotLinkFrom.EntityAlias = fromtimeslot;
             queryExpression.LinkEntities.Add(timeslotLinkFrom);
-
-            string totimeslot = "totimeslot";
+            
             LinkEntity totimeslotLink = new LinkEntity(KPMg_BookRoom.EntityLogicalName, KPMg_PredefinedTimeSlots.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_To, KPMg_PredefinedTimeSlots.PrimaryIdAttribute, JoinOperator.Inner);
             totimeslotLink.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_Name);
             totimeslotLink.EntityAlias = totimeslot;
             queryExpression.LinkEntities.Add(totimeslotLink);
-
-            queryExpression.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_Contact,ConditionOperator.Equal,contactid);
+            return queryExpression;
+        }
+        private async Task<List<BookRoomModel>> retriveBookrooms(QueryExpression queryExpression)
+        {
+            List<BookRoomModel> bookRoomModels = new List<BookRoomModel>();
 
             var result = await this._service.RetrieveMultipleAsync(queryExpression);
-            if(result != null)
+            if (result != null)
             {
-                if(result.Entities.Count > 0)
+                if (result.Entities.Count > 0)
                 {
-                    foreach(var bookroomitem in  result.Entities)
+                    foreach (var bookroomitem in result.Entities)
                     {
                         int from = Convert.ToInt32(bookroomitem.GetAttributeValue<AliasedValue>($"{fromtimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId}")?.Value);
                         int to = Convert.ToInt32(bookroomitem.GetAttributeValue<AliasedValue>($"{totimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId}")?.Value);
@@ -105,8 +108,20 @@ namespace KPMG.CRM.Business.BookRoom
                 }
             }
             return bookRoomModels;
+
+        }
+        public async Task<List<BookRoomModel>> getBookRoomsRelatedToContact(string contactid)
+        {
+            QueryExpression queryExpression = this.getbookroomQueryExpression();
+
+            queryExpression.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_Contact,ConditionOperator.Equal,contactid);
+           
+            return await this.retriveBookrooms(queryExpression);
         }
 
-      
+        public async Task<List<BookRoomModel>> getAllBookRooms()
+        {
+            return await this.retriveBookrooms(this.getbookroomQueryExpression());
+        }
     }
 }

@@ -15,6 +15,6 @@ namespace KPMG.CRM.Business.Models
         //public string phone { get; set; }
         public string? email { get; set; }
         public string? paswword { get; set; }
-        public string? role { get; set; }
+        public int? role { get; set; }
     }
 }

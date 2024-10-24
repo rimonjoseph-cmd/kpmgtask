@@ -15,10 +15,13 @@ export interface CleaningStaffDetails {
 }
 
 export interface RegistrationForm {
-    userType: string;
+    userType: number;
     email: string;
     password: string;
     gender: string;
+    firstname: string;
+    lastname: string;
+    username:string;
     adminDetails: AdminDetails;
     employeeDetails: EmployeeDetails;
     cleaningStaffDetails: CleaningStaffDetails;

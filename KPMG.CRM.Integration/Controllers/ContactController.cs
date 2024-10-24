@@ -41,12 +41,26 @@ namespace KPMG.CRM.Integration.Controllers
                 });
             }
 
-            var claims = new List<Claim>
-                {
+            var claims = new List<Claim>{
                     new Claim(ClaimTypes.Name, loginRequest.username),
                     new Claim("contactid", getContactCRM.id.ToString() ),
-                    new Claim(ClaimTypes.Role, getContactCRM.role)
-                };
+                    //new Claim(ClaimTypes.Role, getContactCRM.role)
+            };
+            switch (getContactCRM.role)
+            {
+                case (int?)contactRoleEnum.admin:
+                    claims.Add(new Claim(ClaimTypes.Role, "admin"));
+                    claims.Add(new Claim(ClaimTypes.Role, "employee"));
+                    claims.Add(new Claim(ClaimTypes.Role, "cleaningstaff"));
+                    break;
+                case (int?)contactRoleEnum.employee:
+                    claims.Add(new Claim(ClaimTypes.Role, "employee"));
+                    break;
+                case (int?)contactRoleEnum.cleaningstaff:
+                    claims.Add(new Claim(ClaimTypes.Role, "cleaningstaff"));
+
+                    break;
+            }
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
