@@ -14,6 +14,11 @@ import { AllRoomsComponent } from './pages/room/all-rooms/all-rooms.component';
 
 const routes: Routes = [
   {
+    path : "",
+    component: LoginComponent,
+    canActivate : [IsAuthenticatedGuard],
+  },
+  {
     path : "buildings",
     component: BuildingsComponent,
     canActivate : [IsAuthenticatedGuard,HasroleGuard],

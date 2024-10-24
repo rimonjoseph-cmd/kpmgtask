@@ -11,7 +11,7 @@ export class RoomService {
   getRoom(id: string) {
     return this.http.get(links.rooms.getRoom + '?id=' +id);
   }
-  createroom(createUpdateRoomModel: RoomModel) {
+  createroom(createUpdateRoomModel: any) {
     return this.http.post(links.rooms.createRoom,createUpdateRoomModel);
   }
   getAllRooms() {

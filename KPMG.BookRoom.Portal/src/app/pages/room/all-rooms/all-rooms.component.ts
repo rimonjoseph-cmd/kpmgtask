@@ -1,7 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { BuildingService } from 'src/app/core/services/building/building.service';
 import { RoomService } from 'src/app/core/services/room/room.service';
+import { BuildingModel } from 'src/app/models/building.model';
 import { RoomModel } from 'src/app/models/rooms.model';
 
+interface RoomCreateModel {
+    id:string;
+    name:string;
+    code:string;
+    isactive: boolean;
+    buildingid :string;
+}
 @Component({
   selector: 'app-all-rooms',
   templateUrl: './all-rooms.component.html',
@@ -11,24 +21,25 @@ export class AllRoomsComponent implements OnInit{
 
   isLoader: boolean = false;
   allRooms: RoomModel[] = [];
-  createUpdateRoomModel : RoomModel = {
+  createUpdateRoomModel : RoomCreateModel = {
     id: '',
     name: '',
     code: '',
     isactive: false,
-    building: {
-      Id: '',
-      name: '',
-      code: '',
-      isactive: false,
-      isblocked: false
-    }
+    buildingid:''
   }
-  constructor(private roomService : RoomService){
+  builings : BuildingModel[] = []
+  constructor(private roomService : RoomService,private buildingService : BuildingService){
   }
   ngOnInit(): void {
     this.loadRooms();
-   
+    debugger;
+    this.buildingService.getAllBuildings().subscribe((response: any) => {
+      debugger;
+      if(response.result){
+        this.builings = response.data;
+      }
+    });
   }
   loadRooms(){
   this.isLoader = true;
@@ -60,5 +71,8 @@ export class AllRoomsComponent implements OnInit{
       }
     })
   }
+  resetForm(form: NgForm) {
+    form.resetForm();
+}
 
 }

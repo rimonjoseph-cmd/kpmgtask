@@ -1,11 +1,13 @@
-<div class="row">
-    <div class="col-7">
-        <div class="card">
-            <div class="card-header bg-success">
-                        My Books
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered">
+<div *ngIf="isLoader" class="overlay">
+    <div class="spinner-border text-light spinner" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="container col-2 col-10">
+    <div class="row mt-4">
+        <div class="col-7">
+            <h2>My Books</h2>  
+                <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -23,6 +25,7 @@
                             <td>{{bookroomitem.bookedDate}}</td>
                             <td>{{bookroomitem.from}}</td>
                             <td>{{bookroomitem.to}}</td>
+                            <td>{{bookroomitem.contactName}}</td>
                             <td class="text-center">
                                 <!-- <button class="btn btn-success btn-sm" (click)="view(bookroomitem.id)">Edit</button> -->
                                 <!-- <button class="btn btn-danger btn-sm" (click)="DeleteBuilding(building.id)">D</button> -->
@@ -40,7 +43,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
         </div>
     </div>
 </div>

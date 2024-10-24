@@ -33,7 +33,7 @@ namespace KPMG.CRM.Integration.Controllers
         [HttpGet("getavailable")]
         public async Task<BaseResponse<List<RoomModel>>> GetAvailable(string bookedDate)
         {
-            DateTime dateTime = DateTime.Parse(bookedDate);// bookedDate.ConvertToUtcDateTime();
+            DateTime dateTime = DateTime.Parse(bookedDate);
             return new BaseResponse<List<RoomModel>>()
             {
                 message = "success retrieve",

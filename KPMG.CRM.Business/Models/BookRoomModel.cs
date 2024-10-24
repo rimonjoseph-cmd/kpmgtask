@@ -9,6 +9,7 @@ namespace KPMG.CRM.Business.Models
         public string from { get; set; }
         public string to { get; set; }
         public DateTime bookedDate { get; set; }
+        public string contactName { get; set; }
     }
     public class RoomBookModel
     {

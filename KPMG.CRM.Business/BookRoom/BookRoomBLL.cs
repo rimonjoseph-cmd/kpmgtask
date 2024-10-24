@@ -25,6 +25,7 @@ namespace KPMG.CRM.Business.BookRoom
         private readonly IOrganizationServiceAsync _service;
         string fromtimeslot = "fromtimeslot";
         string totimeslot = "totimeslot";
+        string constactalisas = "contactAlias";
         public BookRoomBLL(IOrganizationServiceAsync organizationService)
         {
             _service = organizationService;
@@ -80,6 +81,12 @@ namespace KPMG.CRM.Business.BookRoom
             totimeslotLink.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_Name);
             totimeslotLink.EntityAlias = totimeslot;
             queryExpression.LinkEntities.Add(totimeslotLink);
+
+            LinkEntity contactLink = new LinkEntity(KPMg_BookRoom.EntityLogicalName, Contacts.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_Contact, Contacts.PrimaryIdAttribute, JoinOperator.Inner);
+            contactLink.Columns = new ColumnSet(Contacts.Fields.FullName);
+            contactLink.EntityAlias = constactalisas;
+            queryExpression.LinkEntities.Add(contactLink);
+
             return queryExpression;
         }
         private async Task<List<BookRoomModel>> retriveBookrooms(QueryExpression queryExpression)
@@ -102,7 +109,8 @@ namespace KPMG.CRM.Business.BookRoom
                             bookedDate = bookroomitem.GetAttributeValue<DateTime>(KPMg_BookRoom.Fields.KPMg_BookedZoneDependent),
                             from = bookroomitem.GetAttributeValue<AliasedValue>($"{fromtimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_Name}")?.Value?.ToString(),
                             to = bookroomitem.GetAttributeValue<AliasedValue>($"{totimeslot}.{KPMg_PredefinedTimeSlots.Fields.KPMg_Name}")?.Value?.ToString(),
-                            room = null
+                            room = null,
+                            contactName = bookroomitem.GetAttributeValue<AliasedValue>($"{constactalisas}.{Contacts.Fields.FullName}")?.Value?.ToString(),
                         });
                     }
                 }

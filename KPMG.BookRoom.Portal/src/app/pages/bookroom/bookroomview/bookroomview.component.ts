@@ -75,6 +75,7 @@ export class BookroomviewComponent implements OnInit {
   public bookingData: Booking;
  
   onBookedDateChange() {
+    debugger;
     const date = new Date(new Date(this.selectedDateTime)); // Get the current date and time
 
 // Format the date without the GMT offset
@@ -118,6 +119,6 @@ debugger;
     const formattedHours = hours < 10 ? '0' + hours : hours;
     const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
 
-    return `${year}-${formattedMonth}-${formattedDay}T${formattedHours}:${formattedMinutes}`;
+    return `${year}-${formattedMonth}-${formattedDay}`;//T${formattedHours}:${formattedMinutes}`;
   }
 }

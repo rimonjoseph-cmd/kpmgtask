@@ -31,7 +31,7 @@ export class AvailableRoomsComponent implements OnInit {
     const formattedHours = hours < 10 ? '0' + hours : hours;
     const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
 
-    return `${year}-${formattedMonth}-${formattedDay}T${formattedHours}:${formattedMinutes}`;
+    return `${year}-${formattedMonth}-${formattedDay}`;//T${formattedHours}:${formattedMinutes}`;
   }
   onsubmit(){
     debugger;
