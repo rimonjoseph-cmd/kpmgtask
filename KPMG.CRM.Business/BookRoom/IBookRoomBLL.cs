@@ -12,5 +12,6 @@ namespace KPMG.CRM.Business.BookRoom
     {
         Task<bookroomresponse> createBookroom(CreateBookRoom obj);
         Task<List<BookRoomModel>> getBookRoomsRelatedToContact(string contactid);
+        Task<List<BookRoomModel>> getAllBookRooms();
     }
 }

@@ -19,7 +19,10 @@ namespace KPMG.CRM.Business.Room.BLL
     {
         private readonly IOrganizationServiceAsync organizationService;
         private readonly ITimeSlotBLL timeSlotBLL;
-        
+        string fromtimeslot = "fromtimeslot";
+        string totimeslot = "totimeslot";
+        string buildingalias = "building";
+
         public RoomBLL(IOrganizationServiceAsync organizationService,ITimeSlotBLL timeSlotBLL)
         {
             this.organizationService = organizationService;
@@ -34,7 +37,7 @@ namespace KPMG.CRM.Business.Room.BLL
             return await this.organizationService.CreateAsync(room);
         }
 
-        public LinkEntity getbuildingwithroomlink(string buildingalias)
+        public LinkEntity getbuildingwithroomlink()
         {
             LinkEntity buildingLink = new LinkEntity(KPMg_Room.EntityLogicalName, KPMg_Building.EntityLogicalName, KPMg_Room.Fields.KPMg_Building, KPMg_Building.PrimaryIdAttribute, JoinOperator.Inner);
             buildingLink.Columns = new ColumnSet(KPMg_Building.Fields.KPMg_BuildingCode, KPMg_Building.Fields.StateCode, KPMg_Building.Fields.KPMg_Name);
@@ -53,8 +56,7 @@ namespace KPMG.CRM.Business.Room.BLL
 
             #region building check not blocked
             // Create a LinkEntity for the Building relationship
-            string buildingalias = "building";
-            roomsqueryExpression.LinkEntities.Add(this.getbuildingwithroomlink(buildingalias));
+            roomsqueryExpression.LinkEntities.Add(this.getbuildingwithroomlink());
             #endregion
 
             var rooms  =  await this.organizationService.RetrieveMultipleAsync(roomsqueryExpression);
@@ -64,9 +66,6 @@ namespace KPMG.CRM.Business.Room.BLL
                
                 foreach (var roomEntity in rooms.Entities)
                 {
-                    string codebui = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_BuildingCode)?.Value.ToString();
-                    string namebui = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value.ToString();
-                            
                     roomsModel.Add(new RoomModel() {
                         id = roomEntity.Id,
                         code = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_RoomCode),
@@ -98,13 +97,12 @@ namespace KPMG.CRM.Business.Room.BLL
                 roomitemBookQuery.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_BookedZoneDependent,ConditionOperator.On, dateInput);
                 roomitemBookQuery.Criteria.AddCondition(KPMg_BookRoom.Fields.KPMg_Room,ConditionOperator.Equal, roomitem.id);
 
-                string fromtimeslot = "fromtimeslot";
+                
                 LinkEntity timeslotLinkFrom = new LinkEntity(KPMg_BookRoom.EntityLogicalName, KPMg_PredefinedTimeSlots.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_From, KPMg_PredefinedTimeSlots.PrimaryIdAttribute, JoinOperator.Inner);
                 timeslotLinkFrom.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId);
                 timeslotLinkFrom.EntityAlias = fromtimeslot;
                 roomitemBookQuery.LinkEntities.Add(timeslotLinkFrom);
 
-                string totimeslot = "totimeslot";
                 LinkEntity totimeslotLink = new LinkEntity(KPMg_BookRoom.EntityLogicalName, KPMg_PredefinedTimeSlots.EntityLogicalName, KPMg_BookRoom.Fields.KPMg_To, KPMg_PredefinedTimeSlots.PrimaryIdAttribute, JoinOperator.Inner);
                 totimeslotLink.Columns = new ColumnSet(KPMg_PredefinedTimeSlots.Fields.KPMg_TimeId);
                 totimeslotLink.EntityAlias = totimeslot;
@@ -128,6 +126,7 @@ namespace KPMG.CRM.Business.Room.BLL
             return result;
         }
 
+      
         public async Task<RoomModel> getRoom(string id)
         {
             QueryExpression roomsqueryExpression = new QueryExpression(KPMg_Room.EntityLogicalName);
@@ -153,6 +152,42 @@ namespace KPMG.CRM.Business.Room.BLL
             }
             return response;
 
+        }
+        public async Task<List<RoomModel>> getAll()
+        {
+            List<RoomModel> roomsModel = new List<RoomModel>();
+
+            QueryExpression roomsqueryExpression = new QueryExpression(KPMg_Room.EntityLogicalName);
+            roomsqueryExpression.ColumnSet = new ColumnSet(true);
+
+            LinkEntity buildingLink = new LinkEntity(KPMg_Room.EntityLogicalName, KPMg_Building.EntityLogicalName, KPMg_Room.Fields.KPMg_Building, KPMg_Building.PrimaryIdAttribute, JoinOperator.Inner);
+            buildingLink.Columns = new ColumnSet(KPMg_Building.Fields.KPMg_BuildingCode, KPMg_Building.Fields.StateCode, KPMg_Building.Fields.KPMg_Name);
+            buildingLink.EntityAlias = buildingalias;
+            roomsqueryExpression.LinkEntities.Add(buildingLink);
+
+            var result = await this.organizationService.RetrieveMultipleAsync(roomsqueryExpression);
+            if (result != null && result?.Entities.Count > 0)
+            {
+
+                foreach (var roomEntity in result.Entities)
+                {
+                    roomsModel.Add(new RoomModel()
+                    {
+                        id = roomEntity.Id,
+                        code = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_RoomCode),
+                        name = roomEntity.GetAttributeValue<string>(KPMg_Room.Fields.KPMg_Name),
+                        isactive = true,
+                        building = new Models.BuildingModel()
+                        {
+                            Id = roomEntity.GetAttributeValue<Guid>(KPMg_Room.Fields.Id).ToString(),
+                            code = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_BuildingCode)?.Value.ToString(),
+                            name = roomEntity.GetAttributeValue<AliasedValue>(buildingalias + "." + KPMg_Building.Fields.KPMg_Name)?.Value.ToString(),
+                            isactive = true
+                        }
+                    });
+                }
+            }
+            return roomsModel;
         }
     }
 }

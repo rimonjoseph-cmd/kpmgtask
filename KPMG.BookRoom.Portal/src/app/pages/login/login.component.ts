@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit{
     username: '',
     password: ''
   };
+  isLoader: boolean = false;
+
   constructor(private authenticateService : AuthenticationService,
     private router : Router){
   }
@@ -21,10 +23,12 @@ export class LoginComponent implements OnInit{
   }
   login(){
     debugger;
+    this.isLoader = true;
     this.authenticateService.loginContact(this.loginContact).subscribe((response : any) => {
       if(response.result){
         debugger;
-        this.router.navigate(['/']);
+        this.isLoader = false;
+        this.router.navigate(['']);
       }
     })
   }

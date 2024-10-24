@@ -15,6 +15,7 @@ import { AvailableRoomsComponent } from './pages/room/rooms/available-rooms/avai
 import { AllRoomsComponent } from './pages/room/all-rooms/all-rooms.component';
 import { ViewRoomComponent } from './pages/room/view-room/view-room.component';
 import { RegisterFormGroupComponent } from './pages/register/register-form-group/register-form-group.component';
+import { CleaningStaffDashboardComponent } from './pages/Dashboards/cleaning-staff-dashboard/cleaning-staff-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RegisterFormGroupComponent } from './pages/register/register-form-group
     AllRoomsComponent,
     ViewRoomComponent,
     RegisterFormGroupComponent,
+    CleaningStaffDashboardComponent,
   ],
   imports: [
     BrowserModule,

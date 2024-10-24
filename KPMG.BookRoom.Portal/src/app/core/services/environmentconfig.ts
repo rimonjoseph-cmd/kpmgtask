@@ -4,14 +4,19 @@ export const  links = {
     "createbuilding" : mainUrl + "Building",
     "contact": {
         "registernew" : mainUrl + "contact",
-        "login" : mainUrl + "contact"+ "/login"
+        "login" : mainUrl + "contact"+ "/login",
+        "register" : mainUrl + "contact"+ "/register",
     },
     "bookrooms": {
         "mybookroooms" : mainUrl + "book/own",
-        "createbook" : mainUrl + "book"
+        "createbook" : mainUrl + "book",
+        "allbooks" : mainUrl + "book"
     },
     "rooms": {
-        "availableRooms" : mainUrl + "room/getavailable"
+        "availableRooms" : mainUrl + "room/getavailable",
+        "allRooms" : mainUrl + "room",
+        "createRoom" : mainUrl + "room",
+        "getRoom" : mainUrl + "room"
     },
     "timeslots": {
         "getall" : mainUrl + "TimeSlot"

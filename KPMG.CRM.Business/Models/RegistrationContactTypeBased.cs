@@ -33,16 +33,16 @@ namespace KPMG.CRM.Business.Models
 
     public class RegistrationContactTypeBased
     {
-        public string id { get; set; }
+        public string? id { get; set; }
         public contactRoleEnum userType { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
-        public string gender { get; set; }
+        public string? email { get; set; }
+        public string? password { get; set; }
+        public string? gender { get; set; }
         public string? firstName { get; set; }
         public string? username { get; set; }
         public string? lastName { get; set; }
-        public AdminDetails adminDetails { get; set; }
-        public EmployeeDetails employeeDetails { get; set; }
-        public CleaningStaffDetails cleaningStaffDetails { get; set; }
+        public AdminDetails? adminDetails { get; set; }
+        public EmployeeDetails? employeeDetails { get; set; }
+        public CleaningStaffDetails? cleaningStaffDetails { get; set; }
     }
 }

@@ -25,11 +25,18 @@ namespace KPMG.CRM.Integration.Controllers
             _config = config;
         }
         // GET: api/<BookController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [Authorize(Policy = "RequireCleanStuffRole")]
+        [HttpGet()]
+        public async Task<BaseResponse<List<BookRoomModel>>> Get()
         {
-            
-            return new string[] { "value1", "value2" };
+            var r = HttpContext.User.FindFirst("contactid");
+
+            return new BaseResponse<List<BookRoomModel>>()
+            {
+                message = "success retrieve",
+                result = true,
+                data = await this._bookRoomBLL.getAllBookRooms()
+            };
         }
 
         // GET: api/<BookController>

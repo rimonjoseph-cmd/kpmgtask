@@ -4,6 +4,7 @@ using KPMG.CRM.Integration.API.Extensions;
 using KPMG.CRM.Integration.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,11 +19,15 @@ namespace KPMG.CRM.Integration.Controllers
         public RoomController(IRoomBLL roomBLL) {
             this.roomBLL = roomBLL;
         }
-        // GET: api/<RoomController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<BaseResponse<List<RoomModel>>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new BaseResponse<List<RoomModel>>()
+            {
+                message = "success retrieve",
+                result = true,
+                data = await this.roomBLL.getAll()
+            };
         }
 
         [HttpGet("getavailable")]
@@ -37,7 +42,6 @@ namespace KPMG.CRM.Integration.Controllers
             };
         }
 
-        // GET api/<RoomController>/5
         [HttpGet("{id}")]
         public async Task<BaseResponse<RoomModel>> Get(string id)
         {
@@ -49,20 +53,17 @@ namespace KPMG.CRM.Integration.Controllers
             };
         }
 
-        // POST api/<RoomController>
         [HttpPost]
         public async Task<Guid> Post([FromBody] CreateRoomInputDTO createRoomInput)
         {
            return await this.roomBLL.createRoom(createRoomInput);
         }
 
-        // PUT api/<RoomController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<RoomController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/services/authenticate/authentication.service';
 import { RegistrationForm } from 'src/app/models/register.model';
 
 @Component({
@@ -8,10 +10,16 @@ import { RegistrationForm } from 'src/app/models/register.model';
   styleUrls: ['./register-form-group.component.css']
 })
 export class RegisterFormGroupComponent {
-  userTypes = ['Administration', 'Employee', 'CleaningStaff'];
+  userTypes = [
+    {name:'Administration', val: 1},
+    {name:'Employee', val: 2},
+    {name:'CleaningStaff', val: 3},
+    ];
   registrationForm: FormGroup;
+  isLoader: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authenticateService : AuthenticationService,
+    private router : Router) {
     this.registrationForm = this.formBuilder.group({
       userType: [''],
       username: [''],
@@ -19,6 +27,8 @@ export class RegisterFormGroupComponent {
       gender: [''],
       password: [''],
       passwordConfirm: [''],
+      firstname: [''],
+      lastname: [''],
       adminDetails: this.formBuilder.group({
         department: [''],
         role: [''],
@@ -38,14 +48,19 @@ export class RegisterFormGroupComponent {
   }
 
   onSubmit() {
+  this.isLoader= true;
+
     if (this.registrationForm.valid) {
       // Implement registration logic here
       const formValues = this.registrationForm.value;
       const registrationForm: RegistrationForm = {
-        userType: formValues.userType,
+        userType: parseInt(formValues.userType, 10) - 1,
         email: formValues.email,
         password: formValues.password,
         gender: formValues.gender,
+        firstname: formValues.firstname,
+        lastname: formValues.lastname,
+        username: formValues.username,
         adminDetails: {
             department: formValues.adminDetails.department,
             officeLocation: formValues.adminDetails.officeLocation,
@@ -60,7 +75,12 @@ export class RegisterFormGroupComponent {
             areaAssigned: formValues.cleaningStaffDetails.areaAssigned,
         }
     };
-    console.log(registrationForm);
+    this.authenticateService.register(registrationForm).subscribe((response : any) => {
+      this.isLoader = false;
+      if(response.result){
+        this.router.navigate(['login']);
+      }
+    })
   }
 }
 }

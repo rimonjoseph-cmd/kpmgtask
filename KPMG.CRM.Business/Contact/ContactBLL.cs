@@ -71,7 +71,8 @@ namespace KPMG.CRM.Business.Contact
                         {
                             id = con.Id.ToString(),
                             email = con.GetAttributeValue<string>(Contacts.Fields.EmailAddress1),
-                            role = this.GetroleName(contactrole),
+                            //role = this.GetroleName(contactrole),
+                            role = contactrole,
                             username = con.GetAttributeValue<string>(Contacts.Fields.AdX_Identity_Username)
                         };
                     }

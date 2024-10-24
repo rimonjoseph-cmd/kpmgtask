@@ -16,7 +16,8 @@ export class HasroleGuard implements CanActivate {
     debugger;
       //return this.authenticateService.user.role.includes(route.data['role']);
       let r =  this.authenticateService.user.role == route.data['role'];
-      let u =  route.data['role'].includes(this.authenticateService.user.role);
+      //let u =  route.data['role'].includes(this.authenticateService.user.role);
+      let u = this.authenticateService.user.role.some(role => route.data['role'].includes(role));
       let isauthorized = u;
       if(!isauthorized){
         this.router.navigate(['']);
