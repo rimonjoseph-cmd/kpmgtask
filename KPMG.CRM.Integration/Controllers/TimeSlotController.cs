@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KPMG.CRM.Integration.API.Controllers
 {
-    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TimeSlotController : ControllerBase
@@ -32,30 +31,14 @@ namespace KPMG.CRM.Integration.API.Controllers
             };
         }
 
-        // GET api/<TimeSlotController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+      
         // POST api/<TimeSlotController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-            this.timeSlotBLL.createtimeslotconfiguration();
-        }
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //    this.timeSlotBLL.createtimeslotconfiguration();
+        //}
 
-        // PUT api/<TimeSlotController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<TimeSlotController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+      
     }
 }

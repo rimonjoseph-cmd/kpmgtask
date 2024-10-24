@@ -59,7 +59,8 @@ builder.Services.AddAuthorization(options =>
 #region dependency injection
 builder.Services.AddSingleton<IOrganizationServiceAsync>(serviceProvider =>
 {
-    return CreateOrganizationService();
+    var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+    return CreateOrganizationService(configuration);
 });
 builder.Services.AddScoped<IBuildingBLL,BuildingBLL>();
 builder.Services.AddScoped<IRoomBLL,RoomBLL>();
@@ -86,14 +87,14 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseCors(MyAllowSpecificOrigins);
 app.Run();
-IOrganizationServiceAsync CreateOrganizationService()
+IOrganizationServiceAsync CreateOrganizationService(IConfiguration _configuration)
 {
     try
     {
-        string clientid = "a82375ed-07ae-49f3-899f-bfc99e94ac49";
-        string appsecret = "VZ98Q~ZrBgneQqZpw8Ku4sg-hfWeCriUhK7F5bVA";
-        string authoirty = "https://login.microsoftonline.com/94957a1d-682e-469c-9db8-5ab6cb6adad3";
-        string crmurl = "https://org0365d327.crm15.dynamics.com/";
+        string clientid = _configuration["AzureAd:ClientId"];
+        string appsecret = _configuration["AzureAd:ClientSecret"];
+        string authoirty = _configuration["AzureAd:Authority"];
+        string crmurl = _configuration["CRM:Url"];
 
         string connectstring = $"AuthType=ClientSecret;Url={crmurl};Clientid={clientid};ClientSecret={appsecret};Authority={authoirty}:RequireNewInstance=True";
         IOrganizationServiceAsync service = new ServiceClient(connectstring);
